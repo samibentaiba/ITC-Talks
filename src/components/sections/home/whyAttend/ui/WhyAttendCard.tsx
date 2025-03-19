@@ -1,10 +1,14 @@
+import { ReactElement } from "react";
+
 interface WhyAttendCardProps {
-  number: string
-  title: string
-  description: string
+  number: string;
+  title: string;
+  description: string;
 }
 
-export default function WhyAttendCard({ number, title, description }: WhyAttendCardProps) {
+export default function WhyAttendCard(
+  { number, title, description }: WhyAttendCardProps,
+): ReactElement {
   return (
     <div className="bg-gray-900 rounded-lg p-6">
       <div className="flex items-start space-x-4 mb-4">
@@ -15,6 +19,5 @@ export default function WhyAttendCard({ number, title, description }: WhyAttendC
       <h3 className="text-lg font-bold uppercase mb-2">{title}</h3>
       <p className="text-sm text-gray-400">{description}</p>
     </div>
-  )
+  );
 }
-

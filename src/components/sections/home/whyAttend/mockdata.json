@@ -1,0 +1,24 @@
+{
+  "whyAttend": [
+    {
+      "number": "01",
+      "title": "LEARN FROM EXPERTS",
+      "description": "Hear top IT professionals share their journeys, challenges, and insights."
+    },
+    {
+      "number": "02",
+      "title": "EXPLORE NEW IDEAS",
+      "description": "Discover the latest trends in tech, software, and cybersecurity."
+    },
+    {
+      "number": "03",
+      "title": "MEET LIKE-MINDED PEOPLE",
+      "description": "Connect with students, professionals, and industry leaders."
+    },
+    {
+      "number": "04",
+      "title": "GET INSPIRED",
+      "description": "Join a fun and engaging event that fuels your growth and creativity."
+    }
+  ]
+}
