@@ -4,10 +4,12 @@ import tailwindcssAnimate from "tailwindcss-animate";
 const config: Config = {
   darkMode: "class",
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx,html,css,sass,scss}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx,html,css,sass,scss}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx,html,css,sass,scss}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx,html,css,sass,scss}",
+    "./styles/**/*.{js,ts,jsx,tsx,mdx,html,css,sass,scss}",
+    "*.{js,ts,jsx,tsx,mdx,html,css,sass,scss}",
   ],
   theme: {
     extend: {
@@ -59,7 +61,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
-        syne: ['Syne', 'sans-serif'],
+        syne: ["Syne", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

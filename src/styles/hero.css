@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/* Main section styles */
+.hero-section {
+  @apply container mx-auto px-4 md:px-6 pt-8 md:pt-12 lg:pt-16;
+}
+
+/* Main text section */
+.hero-main {
+  @apply bg-black flex items-center justify-center p-4;
+}
+
+.hero-content {
+  @apply w-full text-white;
+}
+
+/* Desktop view */
+.hero-desktop {
+  @apply lg:flex hidden justify-between items-start;
+}
+
+/* Tablet view */
+.hero-tablet {
+  @apply md:flex hidden lg:hidden flex-col;
+}
+
+/* Mobile view */
+.hero-mobile {
+  @apply flex flex-col md:hidden;
+}
+
+/* Coming soon section */
+.coming-soon {
+  @apply mt-8 md:mt-12 text-center;
+}
+
+.coming-soon-title {
+  @apply text-5xl md:text-7xl lg:text-8xl font-bold text-gray-800;
+}
+
+/* Image carousel */
+.carousel-container {
+  @apply w-full bg-black;
+}
+
+.carousel-desktop {
+  @apply flex gap-4 p-4 mx-auto;
+}
+
+.carousel-image-container {
+  @apply relative h-[388px] w-full overflow-hidden rounded-2xl;
+}
+
+/* Buttons */
+.hero-button {
+  @apply bg-white rounded-full shadow-lg hover:bg-gray-200 transition;
+}
+
+.arrow-button {
+  @apply w-10 h-10 bg-white rounded-full shadow-[0px_1px_2px_0px_rgba(1,71,255,0.60)] flex items-center justify-center hover:bg-gray-200 transition;
+}
