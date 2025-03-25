@@ -59,6 +59,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        syne: ['Syne', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
