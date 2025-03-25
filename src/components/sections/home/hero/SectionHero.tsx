@@ -5,9 +5,9 @@ import Image from "next/image";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "@/styles/hero.css";
-export default SectionHero;
 
-function SectionHero() {
+// Main SectionHero Component
+export default function SectionHero() {
   return (
     <section className="hero-section">
       <MainText />
@@ -17,18 +17,22 @@ function SectionHero() {
   );
 }
 
+// MainText Component
 function MainText() {
   return (
     <main className="hero-main">
       <div className="hero-content">
+        {/* Desktop View */}
         <div className="hero-desktop">
           <HeroText size="text-7xl" />
           <HeroActions btnSize="px-6 py-3 text-xl" />
         </div>
+        {/* Tablet View */}
         <div className="hero-tablet">
           <HeroText size="text-5xl" />
           <HeroActions btnSize="px-6 py-3 text-lg" />
         </div>
+        {/* Mobile View */}
         <div className="hero-mobile">
           <HeroText size="text-4xl" />
           <HeroActions btnSize="w-full px-6 py-3 text-base" />
@@ -38,6 +42,7 @@ function MainText() {
   );
 }
 
+// ComingSoon Component
 function ComingSoon() {
   return (
     <div className="coming-soon">
@@ -47,11 +52,13 @@ function ComingSoon() {
   );
 }
 
+// ImageCarousel Component
 function ImageCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
   const isDesktop = useMediaQuery("(min-width: 1024px)");
 
+  // Scroll to specific image
   const scrollToImage = (index: number) => {
     scrollContainerRef.current?.scrollTo({
       left: (scrollContainerRef.current.children[index] as HTMLElement)?.offsetLeft || 0,
@@ -60,6 +67,7 @@ function ImageCarousel() {
     setCurrentIndex(index);
   };
 
+  // Handle keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
@@ -73,6 +81,7 @@ function ImageCarousel() {
   return (
     <div className="carousel-container">
       {isDesktop ? (
+        // Desktop Carousel
         <div className="carousel-desktop">
           {images.map(({ src, alt, caption }, index) => (
             <div key={index} className="flex-1 min-w-0">
@@ -84,6 +93,7 @@ function ImageCarousel() {
           ))}
         </div>
       ) : (
+        // Mobile Carousel
         <div className="relative">
           <div ref={scrollContainerRef} className="flex snap-x snap-mandatory overflow-x-auto scrollbar-hide scroll-smooth">
             {images.map(({ src, alt, caption }, index) => (
@@ -101,13 +111,21 @@ function ImageCarousel() {
   );
 }
 
+// HeroText Component
 const HeroText = ({ size }: { size: string }) => (
   <div className="flex flex-col gap-4 mb-8">
-    <h1 className={`font-normal ${size}`}>ITC Talks 6th Edition<br />Join the Conversation!</h1>
-    <p className="font-normal leading-loose">— Be part of a day filled with expert insights, engaging talks, and great conversations</p>
+    <h1 className={`font-normal ${size}`}>
+      ITC Talks 6th Edition
+      <br />
+      Join the Conversation!
+    </h1>
+    <p className="font-normal leading-loose">
+      — Be part of a day filled with expert insights, engaging talks, and great conversations
+    </p>
   </div>
 );
 
+// HeroActions Component
 const HeroActions = ({ btnSize }: { btnSize: string }) => (
   <div className="flex flex-col md:flex-row justify-between items-center gap-4">
     <button className={`hero-button ${btnSize}`}>
@@ -120,12 +138,14 @@ const HeroActions = ({ btnSize }: { btnSize: string }) => (
   </div>
 );
 
+// ArrowButton Component
 const ArrowButton = ({ Icon }: { Icon: typeof ChevronLeft }) => (
   <button className="arrow-button">
     <Icon className="w-5 h-5 text-stone-900" />
   </button>
 );
 
+// Images Data
 const images = [
   { src: "/images/itc-stairs.png", alt: "Large group of people gathered on stairs", caption: "Great Community" },
   { src: "/images/itc-talks-5th.png", alt: "Two people looking at a phone together", caption: "Great Team" },
