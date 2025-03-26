@@ -26,11 +26,11 @@ function MainText() {
         </div>
         <div className="hero-tablet">
           <HeroText size="text-5xl" />
-          <HeroActions btnSize="px-6 py-3 text-lg" />
+          <HeroActions btnSize="px-6 py-2 text-lg" />
         </div>
         <div className="hero-mobile">
-          <HeroText size="text-4xl" />
-          <HeroActions btnSize="w-full px-6 py-3 text-base" />
+          <HeroText size="text-3xl" />
+          <HeroActions btnSize="w-full px-6 py-2 text-sm" />
         </div>
       </div>
     </main>
@@ -91,7 +91,7 @@ function ImageCarousel() {
 
 const HeroText = ({ size }: { size: string }) => (
   <div className="flex flex-col gap-[1rem] justify-between items-start self-stretch">
-    <h1 className={`font-normal leading-24 ${size}`}>
+    <h1 className={`font-normal md:leading-24 leading-12 ${size}`}>
       ITC Talks 6th Edition
       <br />
       Join the Conversation!
@@ -101,11 +101,11 @@ const HeroText = ({ size }: { size: string }) => (
 );
 
 const HeroActions = ({ btnSize }: { btnSize: string }) => (
-  <div className="flex flex-col justify-between items-end self-stretch">
-    <button className={`hero-button ${btnSize}`}>
+  <div className="flex lg:flex-col gap-2 md:gap-0 justify-between items-end self-stretch">
+    <button className={`hero-button sm:max-w-[15rem] lg:max-w-[20rem] max-w-[15rem] ${btnSize}`}>
       <span className="text-stone-900 font-medium">Reserve Your Spot Today</span>
     </button>
-    <div className="flex gap-4 mt-2 md:mt-0">
+    <div className="flex gap-2 md:gap-4">
       <ArrowButton Icon={RiArrowLeftFill} />
       <ArrowButton Icon={RiArrowRightFill} />
     </div>
@@ -114,7 +114,7 @@ const HeroActions = ({ btnSize }: { btnSize: string }) => (
 
 const ArrowButton = ({ Icon }: { Icon: typeof RiArrowLeftFill }) => (
   <button className="arrow-button">
-    <Icon className="w-6 h-6 text-stone-900" />
+    <Icon className="w-5 h-5 md:w-5 md:h-5 sm:w-6 sm:h-6 text-stone-900" />
   </button>
 );
 

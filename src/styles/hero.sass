@@ -21,12 +21,13 @@
 
 /* Tablet view */
 .hero-tablet
-  @apply md:flex hidden lg:hidden flex-col
+  @apply md:flex hidden lg:hidden flex-col gap-[2rem]
 
 
 /* Mobile view */
 .hero-mobile
-  @apply flex flex-col md:hidden
+  @apply flex flex-col md:hidden gap-[2rem]
+
 
 
 /* Coming soon section */
@@ -53,9 +54,9 @@
 
 /* Buttons */
 .hero-button
-  @apply bg-white rounded-full shadow-lg hover:bg-gray-200 transition
+  @apply bg-white whitespace-nowrap px-3 py-[0.6rem] rounded-full shadow-lg hover:bg-gray-200 transition 
 
 
 .arrow-button
-  @apply w-15 h-10 bg-white rounded-full shadow-[0px_1px_2px_0px_rgba(1,71,255,0.60)] flex items-center justify-center hover:bg-gray-200 transition
+  @apply px-3 py-[0.6rem] sm:px-4 sm:py-2 md:px-3 md:py-2 lg:px-4 lg:py-2 bg-white rounded-full shadow-[0px_1px_2px_0px_rgba(1,71,255,0.60)] flex items-center justify-center hover:bg-gray-200 transition
 
