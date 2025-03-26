@@ -12,7 +12,7 @@ export default function SectionHeader(): ReactElement {
         {navItems.map(
           (text: string, i: number): ReactElement => (
             <Link
-              key={i}mx-auto 
+              key={i} 
               href={`#${text.toLowerCase()}`}
               className="text-white hover:text-gray-300"
             >
