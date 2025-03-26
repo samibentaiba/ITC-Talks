@@ -40,11 +40,18 @@ function MainText() {
 
 function ComingSoon() {
   return (
-    <div className="coming-soon">
-      <h2 className="coming-soon-title">COMING SOON</h2>
-      <p className="text-sm mt-4">
-        APRIL 8, 2025 • Auditorium, Saad Dahlab University
-      </p>
+    <div className="w-full h-44 relative">
+      <div className="left-[99px] top-0 absolute text-center justify-start text-stone-900 text-[216px] font-normal font-['Archivo_Black'] uppercase leading-[144px]">
+        Coming Soon
+      </div>
+      <div className="w-full px-24 py-4 left-0 top-[114px] absolute bg-stone-900 border-t border-white border-opacity-10 inline-flex justify-between items-start overflow-hidden">
+        <div className="justify-start text-white text-opacity-60 text-xl font-normal font-['Syne'] uppercase leading-loose">
+          April 8, 2025
+        </div>
+        <div className="justify-start text-white text-opacity-60 text-xl font-normal font-['Syne'] leading-loose">
+          Auditorium, Saad Dahlab University
+        </div>
+      </div>
     </div>
   );
 }
@@ -78,10 +85,7 @@ function ImageCarousel() {
   }, [currentIndex]);
 
   return (
-    <div
-      className="scrollbar-hide relative "
-      
-    >
+    <div className="scrollbar-hide relative ">
       {isDesktop ? (
         <div
           ref={scrollContainerRef}
@@ -92,19 +96,14 @@ function ImageCarousel() {
             <div
               key={index}
               className="flex-shrink-0 scrollbar-hide snap-center "
-              
             >
-              <div
-                className=" w-[693px] h-[388px] scrollbar-hide overflow-hidden rounded-2xl"
-                
-              >
+              <div className=" w-[693px] h-[388px] scrollbar-hide overflow-hidden rounded-2xl">
                 <Image
                   src={src}
                   alt={alt}
                   width={693}
                   height={388}
                   className="object-cover"
-                  
                 />
               </div>
               <p className="text-white text-lg mt-2">{caption}</p>

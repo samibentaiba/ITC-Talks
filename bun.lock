@@ -4,6 +4,7 @@
     "": {
       "name": "ITC-Talks",
       "dependencies": {
+        "@fontsource/archivo-black": "^5.2.5",
         "@fontsource/syne": "^5.2.5",
         "next": "^15.2.3",
         "next-themes": "^0.4.6",
@@ -106,6 +107,8 @@
     "@floating-ui/react-dom": ["@floating-ui/react-dom@2.1.2", "", { "dependencies": { "@floating-ui/dom": "^1.0.0" }, "peerDependencies": { "react": ">=16.8.0", "react-dom": ">=16.8.0" } }, "sha512-06okr5cgPzMNBy+Ycse2A6udMi4bqwW/zgBF/rwjcNqWkyr82Mcg8b0vjX8OJpZFy/FKjJmw6wV7t44kK6kW7A=="],
 
     "@floating-ui/utils": ["@floating-ui/utils@0.2.9", "", {}, "sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg=="],
+
+    "@fontsource/archivo-black": ["@fontsource/archivo-black@5.2.5", "", {}, "sha512-tdBRFgA0CgxVqj3mBM96aiXRBoOp51X3IW2e8/t59AVr0NwiBcB+c3C+p5dd7Np/UT/vqdmjb/gK/HaFpulhIA=="],
 
     "@fontsource/syne": ["@fontsource/syne@5.2.5", "", {}, "sha512-ykMIYE7isJVvAhp5hu8oFoIPrwCsVKzuASoza6fd+AhW5QL7+ePJSAIGY0du4ACLNcsXr41F7Me9zdtm/5QVQA=="],
 
