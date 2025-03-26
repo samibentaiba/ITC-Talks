@@ -2,8 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import { RiArrowLeftFill, RiArrowRightFill } from "react-icons/ri";
 import { useMediaQuery } from "@/hooks/use-media-query";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import "@/styles/hero.sass";
 export default SectionHero;
 
@@ -106,15 +106,15 @@ const HeroActions = ({ btnSize }: { btnSize: string }) => (
       <span className="text-stone-900 font-medium">Reserve Your Spot Today</span>
     </button>
     <div className="flex gap-4 mt-2 md:mt-0">
-      <ArrowButton Icon={ChevronLeft} />
-      <ArrowButton Icon={ChevronRight} />
+      <ArrowButton Icon={RiArrowLeftFill} />
+      <ArrowButton Icon={RiArrowRightFill} />
     </div>
   </div>
 );
 
-const ArrowButton = ({ Icon }: { Icon: typeof ChevronLeft }) => (
+const ArrowButton = ({ Icon }: { Icon: typeof RiArrowLeftFill }) => (
   <button className="arrow-button">
-    <Icon className="w-5 h-5 text-stone-900" />
+    <Icon className="w-6 h-6 text-stone-900" />
   </button>
 );
 
