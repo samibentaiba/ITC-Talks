@@ -9,7 +9,7 @@ import SectionDetailedSpeakers from "@/components/sections/home/detailedSpeakers
 import SectionWhyAttend from "@/components/sections/home/whyAttend/SectionWhyAttend";
 import SectionFooter from "@/components/sections/home/footer/SectionFooter";
 import SectionRegisterNow from "@/components/sections/home/registerNow/SectionRegisterNow";
-
+import { ComingSoon } from "@/components/sections/home/hero/SectionHero";
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-black text-white">
@@ -17,6 +17,7 @@ export default function Home() {
       <SectionHeader />
       {/* Hero Section */}
       <SectionHero />
+      <ComingSoon />
       {/* Sponsors */}
       <SectionSponsors />
       {/* About & Speakers */}

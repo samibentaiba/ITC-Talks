@@ -2,7 +2,7 @@
 
 /* Main section styles */
 .hero-section {
-  @apply mx-auto md:w-[1720px]  px-4 md:px-6 pt-8 md:pt-12 lg:pt-16;
+  @apply mx-auto w-screen max-w-[1720px] px-4 md:px-6 pt-8 md:pt-12 lg:pt-16;
 }
 
 /* Main text section */
