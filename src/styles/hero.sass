@@ -1,0 +1,61 @@
+@import "tailwindcss"
+
+/* Main section styles */
+.hero-section
+  @apply mx-auto w-screen px-[1rem] sm:px-[1.5rem] md:px-[2rem] lg:px-[2.5rem]  max-w-[1800px]
+
+
+/* Main text section */
+.hero-main
+  @apply bg-black  w-full  flex items-center  justify-center 
+
+
+.hero-content
+  @apply w-full text-white
+
+
+/* Desktop view */
+.hero-desktop
+  @apply lg:flex hidden overflow-hidden justify-between mx-auto items-start max-w-[1800px]
+
+
+/* Tablet view */
+.hero-tablet
+  @apply md:flex hidden lg:hidden flex-col
+
+
+/* Mobile view */
+.hero-mobile
+  @apply flex flex-col md:hidden
+
+
+/* Coming soon section */
+.coming-soon
+  @apply mt-8 md:mt-12 text-center
+
+
+.coming-soon-title
+  @apply text-5xl md:text-7xl lg:text-8xl font-bold text-gray-800
+
+
+/* Image carousel */
+.carousel-container
+  @apply w-full  bg-black
+
+
+.carousel-desktop
+  @apply flex gap-4 mx-auto
+
+
+.carousel-image-container
+  @apply relative h-[388px] w-full overflow-hidden rounded-2xl
+
+
+/* Buttons */
+.hero-button
+  @apply bg-white rounded-full shadow-lg hover:bg-gray-200 transition
+
+
+.arrow-button
+  @apply w-10 h-10 bg-white rounded-full shadow-[0px_1px_2px_0px_rgba(1,71,255,0.60)] flex items-center justify-center hover:bg-gray-200 transition
+

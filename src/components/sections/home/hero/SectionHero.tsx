@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import "@/styles/hero.css";
+import "@/styles/hero.sass";
 export default SectionHero;
 
 function SectionHero() {
