@@ -9,7 +9,7 @@ export default SectionHero;
 
 function SectionHero() {
   return (
-    <section className="hero-section">
+    <section className="hero-section ">
       <MainText />
       <ImageCarousel />
     </section>
@@ -90,18 +90,18 @@ function ImageCarousel() {
 }
 
 const HeroText = ({ size }: { size: string }) => (
-  <div className="flex flex-col gap-4 mb-8">
-    <h1 className={`font-normal ${size}`}>
+  <div className="flex flex-col gap-[1rem] justify-between items-start self-stretch">
+    <h1 className={`font-normal leading-24 ${size}`}>
       ITC Talks 6th Edition
       <br />
       Join the Conversation!
     </h1>
-    <p className="font-normal leading-loose">— Be part of a day filled with expert insights, engaging talks, and great conversations</p>
+    <p className="font-normal ">— Be part of a day filled with expert insights, engaging talks, and great conversations</p>
   </div>
 );
 
 const HeroActions = ({ btnSize }: { btnSize: string }) => (
-  <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+  <div className="flex flex-col justify-between items-end self-stretch">
     <button className={`hero-button ${btnSize}`}>
       <span className="text-stone-900 font-medium">Reserve Your Spot Today</span>
     </button>
