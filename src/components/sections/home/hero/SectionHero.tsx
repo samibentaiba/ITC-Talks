@@ -39,14 +39,14 @@ function MainText() {
 export function ComingSoon() {
   return (
     <div className="w-full h-38 relative justify-center flex items-center">
-      <Image src="images/ComingSoon.svg" fill alt="coming soon" />
-      <div className="w-screen px-24 py-4 top-[114px] absolute bg-[#1C1A1A] border-t  border-opacity-10 inline-flex justify-between items-start overflow-hidden" style={{ borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
-        <div className="justify-start text-[#a0a0a0] whitespace-nowrap text-opacity-60 opacity-0 md:text-xl text-xs font-normal font-syne uppercase leading-loose">April 8, 2025</div>
-        <div className="justify-start text-[#a0a0a0] whitespace-nowrap  text-opacity-60 opacity-0  md:text-xl text-xs font-normal font-syne leading-loose">Auditorium, Saad Dahlab University</div>
+      <Image src="images/ComingSoon.svg" fill className="px-[2rem] sm:px-[2rem] md:px-[2.5rem] lg:px-[3rem] " alt="coming soon" />
+      <div className="w-screen py-4 top-[114px] absolute bg-[#1C1A1A] border-t  border-opacity-10 inline-flex justify-between items-start overflow-hidden" style={{ borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
+        <div className="justify-start text-[#a0a0a0] whitespace-nowrap text-opacity-60 opacity-0 md:text-xl text-xs font-normal font-syne uppercase leading-tight">April 8, 2025</div>
+        <div className="justify-start text-[#a0a0a0] whitespace-nowrap  text-opacity-60 opacity-0  md:text-xl text-xs font-normal font-syne leading-tight">Auditorium, Saad Dahlab University</div>
       </div>
-      <div className="w-screen max-w-[1720px] px-6 md:px-6  top-[114px] mx-auto absolute bg-[#1C1A1A] border-t  border-opacity-10 inline-flex justify-between items-start overflow-hidden" style={{ borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
-        <div className="justify-start text-[#a0a0a0] whitespace-nowrap text-opacity-60   md:text-xl text-xs font-normal font-syne uppercase leading-loose">April 8, 2025</div>
-        <div className="justify-start text-[#a0a0a0] whitespace-nowrap text-opacity-60  md:text-xl text-xs font-normal font-syne leading-loose">Auditorium, Saad Dahlab University</div>
+      <div className="w-screen max-w-[1720px] py-4 top-[114px] absolute bg-[#1C1A1A] border-t  border-opacity-10 inline-flex justify-between items-start overflow-hidden" style={{ borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
+        <div className="justify-start text-[#a0a0a0] whitespace-nowrap text-opacity-60   md:text-xl text-xs font-normal font-syne uppercase leading-tight">April 8, 2025</div>
+        <div className="justify-start text-[#a0a0a0] whitespace-nowrap text-opacity-60  md:text-xl text-xs font-normal font-syne leading-tight">Auditorium, Saad Dahlab University</div>
       </div>
     </div>
   );

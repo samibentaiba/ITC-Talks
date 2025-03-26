@@ -2,12 +2,12 @@
 
 /* Main section styles */
 .hero-section {
-  @apply mx-auto w-screen max-w-[1720px] px-4 md:px-6 pt-8 md:pt-12 lg:pt-16;
+  @apply mx-auto w-screen px-[1rem] sm:px-[1.5rem] md:px-[2rem] lg:px-[2.5rem]  max-w-[1800px];
 }
 
 /* Main text section */
 .hero-main {
-  @apply bg-black  flex items-center justify-center ;
+  @apply bg-black  w-full  flex items-center  justify-center ;
 }
 
 .hero-content {
@@ -16,7 +16,7 @@
 
 /* Desktop view */
 .hero-desktop {
-  @apply lg:flex hidden justify-between items-start;
+  @apply lg:flex hidden overflow-hidden justify-between mx-auto items-start max-w-[1800px];
 }
 
 /* Tablet view */
@@ -44,7 +44,7 @@
 }
 
 .carousel-desktop {
-  @apply flex gap-4 p-4 mx-auto;
+  @apply flex gap-4 mx-auto;
 }
 
 .carousel-image-container {
