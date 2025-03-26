@@ -2,12 +2,12 @@
 
 /* Main section styles */
 .hero-section {
-  @apply container mx-auto px-4 md:px-6 pt-8 md:pt-12 lg:pt-16;
+  @apply  mx-auto md:w-[1720px] px-4 md:px-6 pt-8 md:pt-12 lg:pt-16;
 }
 
 /* Main text section */
 .hero-main {
-  @apply bg-black flex items-center justify-center p-4;
+  @apply bg-black  flex items-center justify-center ;
 }
 
 .hero-content {
@@ -40,7 +40,7 @@
 
 /* Image carousel */
 .carousel-container {
-  @apply w-full bg-black;
+  @apply w-full  bg-black;
 }
 
 .carousel-desktop {

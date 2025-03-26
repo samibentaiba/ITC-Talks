@@ -7,12 +7,12 @@ export default function SectionHeader(): ReactElement {
   const menuLines: number[] = [12, 6, 18];
 
   return (
-    <header className="container mx-auto  flex items-center justify-between py-4 px-4 md:px-6">
-      <nav className="hidden md:flex space-x-6">
+    <header className=" mx-auto md:w-[1720px] flex items-center justify-between py-4 md:px-4 px-10 ">
+      <nav className="hidden md:flex ">
         {navItems.map(
           (text: string, i: number): ReactElement => (
             <Link
-              key={i}
+              key={i}mx-auto 
               href={`#${text.toLowerCase()}`}
               className="text-white hover:text-gray-300"
             >
