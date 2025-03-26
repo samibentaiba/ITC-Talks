@@ -21,14 +21,14 @@ const eslintConfig = [
       ],
       "react/no-unescaped-entities": "off",
     },
-//    overrides: [
-//      {
-//        files: ["**/*.css", "**/*.scss"],
-//        rules: {
-//          "css/unknownAtRules": "off",
-//        },
-//      },
-//    ],
+    overrides: [
+      {
+        files: ["**/*.css", "**/*.scss"],
+        rules: {
+          "css/unknownAtRules": "off",
+        },
+      },
+    ],
   },
 ];
 

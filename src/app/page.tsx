@@ -12,7 +12,7 @@ import SectionRegisterNow from "@/components/sections/home/registerNow/SectionRe
 
 export default function Home() {
   return (
-    <main className="min-h-screen  bg-black text-white">
+    <main className="min-h-screen overflow-hidden bg-black text-white">
       {/* Header/Navigation */}
       <SectionHeader />
       {/* Hero Section */}

@@ -37,18 +37,29 @@ function MainText() {
     </main>
   );
 }
-
 function ComingSoon() {
   return (
-    <div className="w-full h-44 relative">
-      <div className="left-[99px] top-0 absolute text-center justify-start text-stone-900 text-[216px] font-normal font-['Archivo_Black'] uppercase leading-[144px]">
-        Coming Soon
-      </div>
-      <div className="w-full px-24 py-4 left-0 top-[114px] absolute bg-stone-900 border-t border-white border-opacity-10 inline-flex justify-between items-start overflow-hidden">
-        <div className="justify-start text-white text-opacity-60 text-xl font-normal font-['Syne'] uppercase leading-loose">
+    <div className="w-full  h-44 relative justify-center flex items-center">
+      <Image src="images/ComingSoon.svg" fill alt="coming soon" />
+      <div
+        className="w-[2000px] px-24 py-4 top-[114px] absolute bg-[#1C1A1A] border-t  border-opacity-10 inline-flex justify-between items-start overflow-hidden"
+        style={{ borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}
+      >
+        <div className="justify-start text-[rgba(255, 255, 255, 0.60)] text-opacity-60 opacity-0 text-xl font-normal font-syne uppercase leading-loose">
           April 8, 2025
         </div>
-        <div className="justify-start text-white text-opacity-60 text-xl font-normal font-['Syne'] leading-loose">
+        <div className="justify-start text-[rgba(255, 255, 255, 0.60)] text-opacity-60 opacity-0  text-xl font-normal font-syne leading-loose">
+          Auditorium, Saad Dahlab University
+        </div>
+      </div>
+      <div
+        className="w-full py-4  top-[114px] absolute bg-[#1C1A1A] border-t  border-opacity-10 inline-flex justify-between items-start overflow-hidden"
+        style={{ borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}
+      >
+        <div className="justify-start text-[rgba(255, 255, 255, 0.60)] text-opacity-60   text-xl font-normal font-syne uppercase leading-loose">
+          April 8, 2025
+        </div>
+        <div className="justify-start text-[rgba(255, 255, 255, 0.60)] text-opacity-60  text-xl font-normal font-syne leading-loose">
           Auditorium, Saad Dahlab University
         </div>
       </div>
