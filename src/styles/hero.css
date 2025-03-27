@@ -30,7 +30,7 @@
 }
 
 .hero-button {
-  @apply bg-white whitespace-nowrap px-3 py-[0.6rem] rounded-full shadow-lg hover:bg-gray-200 transition sm:max-w-[15rem] lg:max-w-[20rem] max-w-[15rem] ;
+  @apply bg-white whitespace-nowrap px-6 py-[0.7rem] rounded-full shadow-lg hover:bg-gray-200 transition sm:max-w-[15rem] lg:max-w-[20rem] max-w-[15rem] ;
 }
 
 .arrow-button {
@@ -50,7 +50,7 @@
 }
 
 .coming-soon-t {
-  @apply justify-start text-[#a0a0a0] whitespace-nowrap md:text-xl text-xs font-normal leading-tight;
+  @apply justify-start px-5 text-[#a0a0a0] whitespace-nowrap md:text-xl text-xs font-normal leading-tight;
 }
 
 

@@ -1,23 +1,40 @@
-import Image from "next/image";
-import { ReactElement } from "react";
+"use client"
+
+import Image from "next/image"
+import type { ReactElement } from "react"
 
 export default function SectionSponsors(): ReactElement {
-  const sponsors = ["Amazon", "Dribbble", "HubSpot", "Notion", "Gumroad"];
+  const sponsors = [
+    { brand: "Amazon", src: "/images/companylogo.svg" },
+    { brand: "Dribbble", src: "/images/companylogo1.svg" },
+    { brand: "HubSpot", src: "/images/companylogo2.svg" },
+    { brand: "Notion", src: "/images/companylogo3.svg" },
+    { brand: "Gumroad", src: "/images/companylogo4.svg" },
+  ]
+
+  // Duplicate sponsors for seamless infinite scroll
+  const allSponsors = [...sponsors, ...sponsors]
 
   return (
-    <section className="container mx-auto px-4 md:px-6 py-12">
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
-        {sponsors.map((sponsor: string): ReactElement => (
-          <div key={sponsor} className="flex justify-center">
-            <Image
-              src="/placeholder.svg?height=30&width=100"
-              alt={sponsor}
-              width={100}
-              height={30}
-            />
-          </div>
-        ))}
+    <section className="bg-black py-12 overflow-hidden">
+      <div className="relative">
+        <div className="flex desktop-marquee mobile-marquee ">
+          {allSponsors.map(
+            (sponsor: { brand: string; src: string }, index: number): ReactElement => (
+              <div key={`${sponsor.brand}-${index}`} className="flex justify-center mx-4 md:mx-20 min-w-[120px]">
+                <Image
+                  src={sponsor.src || "/placeholder.svg"}
+                  alt={sponsor.brand}
+                  width={100}
+                  height={30}
+                  className="brightness-0 invert" // Makes logos white
+                />
+              </div>
+            ),
+          )}
+        </div>
       </div>
     </section>
-  );
+  )
 }
+

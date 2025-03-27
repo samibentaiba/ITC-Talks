@@ -4,7 +4,9 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { RiArrowLeftFill, RiArrowRightFill } from "react-icons/ri";
 import "@/styles/hero.css";
+
 export default SectionHero;
+
 function SectionHero() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
@@ -19,7 +21,7 @@ function SectionHero() {
   };
 
   return (
-    <section className="hero-section">
+    <section className="hero-section animate-fade-in-down">
       <MainText scrollToImage={scrollToImage} />
       <ImageCarousel scrollContainerRef={scrollContainerRef} setCurrentIndex={setCurrentIndex} currentIndex={currentIndex} />
     </section>
@@ -46,21 +48,6 @@ function MainText({ scrollToImage }: { scrollToImage: (index: number) => void })
     </main>
   );
 }
-export function ComingSoon() {
-  return (
-    <div className="coming-soon-c">
-      <Image src="images/ComingSoon.svg" fill className="coming-soon-i" alt="coming soon" />
-      <div className="coming-soon-tc border-opacity-10" style={{ borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
-        <div className="coming-soon-t uppercase opacity-0 font-syne text-opacity-60 ">April 8, 2025</div>
-        <div className="coming-soon-t opacity-0 font-syne text-opacity-60 ">Auditorium, Saad Dahlab University</div>
-      </div>
-      <div className="coming-soon-tc max-w-[1720px] border-opacity-10" style={{ borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
-        <div className="coming-soon-t uppercase font-syne text-opacity-60 ">April 8, 2025</div>
-        <div className="coming-soon-t font-syne text-opacity-60 ">Auditorium, Saad Dahlab University</div>
-      </div>
-    </div>
-  );
-}
 
 function ImageCarousel({ scrollContainerRef, setCurrentIndex, currentIndex }: { scrollContainerRef: React.MutableRefObject<HTMLDivElement | null>; setCurrentIndex: React.Dispatch<React.SetStateAction<number>>; currentIndex: number }) {
   useEffect(() => {
@@ -80,10 +67,10 @@ function ImageCarousel({ scrollContainerRef, setCurrentIndex, currentIndex }: { 
   }, [currentIndex]);
 
   return (
-    <div className="scrollbar-hide relative">
+    <div className="scrollbar-hide relative animate-fade-in-up delay-200">
       <div ref={scrollContainerRef} className="imagecarousel-demicontainer scrollbar-hide" style={{ scrollbarWidth: "none" }}>
         {images.map(({ src, alt, caption }, index) => (
-          <div key={index} className="flex-shrink-0 snap-center">
+          <div key={index} className="flex-shrink-0 snap-center animate-fade-in-right delay-300">
             <div className="imagecarousel-image-container">
               <Image src={src} alt={alt} fill className="object-cover" />
             </div>
@@ -96,7 +83,7 @@ function ImageCarousel({ scrollContainerRef, setCurrentIndex, currentIndex }: { 
 }
 
 const HeroText = ({ size }: { size: string }) => (
-  <div className="herotext-container">
+  <div className="herotext-container animate-fade-in-left delay-100">
     <h1 className={`herotext-h1-text ${size}`}>
       ITC Talks 6th Edition
       <br />
@@ -107,11 +94,11 @@ const HeroText = ({ size }: { size: string }) => (
 );
 
 const HeroActions = ({ btnSize, scrollToImage }: { btnSize: string; scrollToImage: (index: number) => void }) => (
-  <div className="heroactions-container">
+  <div className="heroactions-container animate-fade-in-up delay-200">
     <button className={`hero-button ${btnSize}`}>
       <span className="text-stone-900 font-medium">Reserve Your Spot Today</span>
     </button>
-    <div className="flex gap-2 md:gap-4">
+    <div className="flex gap-2 md:gap-4 animate-fade-in-up delay-300">
       <ArrowButton Icon={RiArrowLeftFill} direction="left" scrollToImage={scrollToImage} />
       <ArrowButton Icon={RiArrowRightFill} direction="right" scrollToImage={scrollToImage} />
     </div>
@@ -128,7 +115,6 @@ const images = [
   {
     src: "/images/itc-stairs.png",
     alt: "Large group of people gathered on stairs",
-    caption: "Great Community"
   },
   {
     src: "/images/itc-talks-5th.png",
@@ -141,3 +127,19 @@ const images = [
     caption: "Great Audience"
   }
 ];
+
+export function ComingSoon() {
+  return (
+    <div className="coming-soon-c animate-fade-in-down">
+      <Image src="images/ComingSoon.svg" fill className="coming-soon-i" alt="coming soon" />
+      <div className="coming-soon-tc border-opacity-10 animate-fade-in-left delay-100" style={{ borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
+        <div className="coming-soon-t uppercase opacity-0 font-syne text-opacity-60 ">April 8, 2025</div>
+        <div className="coming-soon-t opacity-0 font-syne text-opacity-60 ">Auditorium, Saad Dahlab University</div>
+      </div>
+      <div className="coming-soon-tc max-w-[1720px] border-opacity-10 animate-fade-in-right delay-200" style={{ borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
+        <div className="coming-soon-t uppercase font-syne text-opacity-60 ">April 8, 2025</div>
+        <div className="coming-soon-t font-syne text-opacity-60 ">Auditorium, Saad Dahlab University</div>
+      </div>
+    </div>
+  );
+}
