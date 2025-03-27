@@ -3,8 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { RiArrowLeftFill, RiArrowRightFill } from "react-icons/ri";
-import { useMediaQuery } from "@/hooks/use-media-query";
-import "@/styles/hero.sass";
+import "@/styles/hero.css";
 export default SectionHero;
 
 function SectionHero() {
@@ -38,15 +37,15 @@ function MainText() {
 }
 export function ComingSoon() {
   return (
-    <div className="w-full h-38 relative justify-center flex items-center">
-      <Image src="images/ComingSoon.svg" fill className="px-[2rem] sm:px-[2rem] md:px-[2.5rem] lg:px-[3rem] " alt="coming soon" />
-      <div className="w-screen py-4 top-[114px] absolute bg-[#1C1A1A] border-t  border-opacity-10 inline-flex justify-between items-start overflow-hidden" style={{ borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
-        <div className="justify-start text-[#a0a0a0] whitespace-nowrap text-opacity-60 opacity-0 md:text-xl text-xs font-normal font-syne uppercase leading-tight">April 8, 2025</div>
-        <div className="justify-start text-[#a0a0a0] whitespace-nowrap  text-opacity-60 opacity-0  md:text-xl text-xs font-normal font-syne leading-tight">Auditorium, Saad Dahlab University</div>
+    <div className="coming-soon-container">
+      <Image src="images/ComingSoon.svg" fill className="coming-soon-image" alt="coming soon" />
+      <div className="coming-soon-fc border-opacity-10" style={{ borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
+        <div className="coming-soon-ftfc font-syne text-opacity-60 ">April 8, 2025</div>
+        <div className="coming-soon-stfc font-syne text-opacity-60 ">Auditorium, Saad Dahlab University</div>
       </div>
-      <div className="w-screen max-w-[1720px] py-4 top-[114px] absolute bg-[#1C1A1A] border-t  border-opacity-10 inline-flex justify-between items-start overflow-hidden" style={{ borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
-        <div className="justify-start text-[#a0a0a0] whitespace-nowrap text-opacity-60   md:text-xl text-xs font-normal font-syne uppercase leading-tight">April 8, 2025</div>
-        <div className="justify-start text-[#a0a0a0] whitespace-nowrap text-opacity-60  md:text-xl text-xs font-normal font-syne leading-tight">Auditorium, Saad Dahlab University</div>
+      <div className="coming-soon-sc border-opacity-10" style={{ borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
+        <div className="coming-soon-ftsc font-syne text-opacity-60 ">April 8, 2025</div>
+        <div className="coming-soon-stsc font-syne text-opacity-60 ">Auditorium, Saad Dahlab University</div>
       </div>
     </div>
   );
@@ -75,10 +74,10 @@ function ImageCarousel() {
 
   return (
     <div className="scrollbar-hide relative ">
-      <div ref={scrollContainerRef} className="flex snap-x snap-mandatory overflow-x-auto gap-[40px] scrollbar-hide scroll-smooth" style={{ scrollbarWidth: "none" }}>
+      <div ref={scrollContainerRef} className="imagecarousel-demicontainer scrollbar-hide" style={{ scrollbarWidth: "none" }}>
         {images.map(({ src, alt, caption }, index) => (
           <div key={index} className="flex-shrink-0 snap-center">
-            <div className="relative sm:w-[310px] sm:h-[173px] w-[310px] h-[173px]  md:w-[668px] md:h-[374px] lg:w-[693px] lg:h-[388px] overflow-hidden rounded-2xl">
+            <div className="imagecarousel-image-container">
               <Image src={src} alt={alt} fill className="object-cover" />
             </div>
             <p className="text-white text-lg mt-2">{caption}</p>
@@ -90,8 +89,8 @@ function ImageCarousel() {
 }
 
 const HeroText = ({ size }: { size: string }) => (
-  <div className="flex flex-col gap-[1rem] justify-between items-start self-stretch">
-    <h1 className={`font-normal md:leading-24 leading-12 ${size}`}>
+  <div className="herotext-container">
+    <h1 className={`herotext-h1-text ${size}`}>
       ITC Talks 6th Edition
       <br />
       Join the Conversation!
@@ -101,8 +100,8 @@ const HeroText = ({ size }: { size: string }) => (
 );
 
 const HeroActions = ({ btnSize }: { btnSize: string }) => (
-  <div className="flex lg:flex-col gap-2 md:gap-0 justify-between items-end self-stretch">
-    <button className={`hero-button sm:max-w-[15rem] lg:max-w-[20rem] max-w-[15rem] ${btnSize}`}>
+  <div className="heroactions-container">
+    <button className={`hero-button ${btnSize}`}>
       <span className="text-stone-900 font-medium">Reserve Your Spot Today</span>
     </button>
     <div className="flex gap-2 md:gap-4">
@@ -114,7 +113,7 @@ const HeroActions = ({ btnSize }: { btnSize: string }) => (
 
 const ArrowButton = ({ Icon }: { Icon: typeof RiArrowLeftFill }) => (
   <button className="arrow-button">
-    <Icon className="w-5 h-5 md:w-5 md:h-5 sm:w-6 sm:h-6 text-stone-900" />
+    <Icon className="w-5 h-5 md:w-8 md:h-5 sm:w-6 sm:h-6 text-stone-900" />
   </button>
 );
 

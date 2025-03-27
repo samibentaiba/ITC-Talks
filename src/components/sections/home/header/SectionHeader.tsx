@@ -7,7 +7,7 @@ export default function SectionHeader(): ReactElement {
   const menuLines: number[] = [12, 6, 18];
 
   return (
-    <header className=" mx-auto w-screen px-[1rem] sm:px-[1.5rem] md:px-[2rem] lg:px-[2.5rem] max-w-[1800px] flex items-center justify-between py-4 ">
+    <header className=" mx-auto w-screen px-[1rem] sm:px-[1.5rem] md:px-[2rem] lg:px-[2.5rem] max-w-[1880px] flex items-center justify-between py-4 ">
       <nav className="hidden md:flex gap-[1rem] sm:gap-[1.5rem] md:gap-[2rem] lg:gap-[2.5rem]">
         {navItems.map(
           (text: string, i: number): ReactElement => (
