@@ -55,7 +55,7 @@ export default function Speakers(): ReactElement {
         future of technology.
       </p>
 
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+      <div className="flex flex-col justify-center items-center md:flex-row md:items-center md:justify-between gap-6">
         <div className="flex -space-x-4">
           {speakers.map((speaker, index) => (
             <Image
@@ -71,8 +71,8 @@ export default function Speakers(): ReactElement {
           ))}
         </div>
 
-        <button className=" hover:bg-white/10 border text-lg  transition-colors rounded-full px-8 py-3 flex items-center gap-2 text-[#ffffff]">
-          <span className="font-medium">Learn More</span>
+        <button className=" hover:bg-white/10 border text-lg  transition-colors rounded-full px-8 md:py-3 py-5 flex items-center gap-2 text-[#ffffff]">
+          <span className="font-medium md:text-lg">Learn More</span>
           <Image
             src="images/arrow-empty.svg"
             alt="Arrow"
