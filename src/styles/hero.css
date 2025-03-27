@@ -7,9 +7,6 @@
   @apply bg-black w-full flex items-center justify-center;
 }
 
-.hero-content {
-  @apply w-full text-white;
-}
 
 .hero-desktop {
   @apply lg:flex hidden overflow-hidden justify-between mx-auto items-start max-w-[1800px];
@@ -23,20 +20,9 @@
   @apply flex flex-col md:hidden gap-[2rem];
 }
 
-.coming-soon {
-  @apply mt-8 md:mt-12 text-center;
-}
 
 .coming-soon-title {
   @apply text-5xl md:text-7xl lg:text-8xl font-bold text-gray-800;
-}
-
-.carousel-container {
-  @apply w-full bg-black;
-}
-
-.carousel-desktop {
-  @apply flex gap-4 mx-auto;
 }
 
 .carousel-image-container {
@@ -51,49 +37,38 @@
   @apply px-3 py-[0.6rem] sm:px-4 sm:py-2 md:px-3 md:py-2 lg:px-4 lg:py-2 bg-white rounded-full shadow-[0px_1px_2px_0px_rgba(1,71,255,0.60)] flex items-center justify-center hover:bg-gray-200 transition;
 }
 
-.coming-soon-image {
+.coming-soon-i {
   @apply px-[2rem] sm:px-[2rem] md:px-[2.5rem] lg:px-[3rem];
 }
 
-.coming-soon-container {
+.coming-soon-c {
   @apply w-full h-40 relative justify-center flex items-center;
 }
 
-.coming-soon-fc {
+.coming-soon-tc {
   @apply w-screen py-4 top-[114px] absolute bg-[#1C1A1A] border-t inline-flex justify-between items-start overflow-hidden;
 }
 
-.coming-soon-sc {
-  @apply w-screen max-w-[1720px] py-4 top-[114px] absolute bg-[#1C1A1A] border-t inline-flex justify-between items-start overflow-hidden;
+.coming-soon-t {
+  @apply justify-start text-[#a0a0a0] whitespace-nowrap md:text-xl text-xs font-normal leading-tight;
 }
 
-.coming-soon-ftfc {
-  @apply justify-start text-[#a0a0a0] whitespace-nowrap opacity-0 md:text-xl text-xs font-normal uppercase leading-tight;
-}
 
-.coming-soon-stfc {
-  @apply justify-start text-[#a0a0a0] whitespace-nowrap opacity-0 md:text-xl text-xs font-normal leading-tight;
-}
-
-.coming-soon-ftsc {
-  @apply justify-start text-[#a0a0a0] whitespace-nowrap md:text-xl text-xs font-normal uppercase leading-tight;
-}
-
-.coming-soon-stsc {
-  @apply justify-start text-[#a0a0a0] whitespace-nowrap  md:text-xl text-xs font-normal leading-tight;
-}
 .imagecarousel-image-container {
   @apply relative sm:w-[310px] sm:h-[173px] w-[310px] h-[173px]  md:w-[668px] md:h-[374px] lg:w-[693px] lg:h-[388px] overflow-hidden rounded-2xl;
 }
+
 .imagecarousel-demicontainer {
   @apply flex snap-x snap-mandatory overflow-x-auto gap-[40px] scroll-smooth;
 }
 .herotext-container{
   @apply flex flex-col gap-[1rem] justify-between items-start self-stretch
 }
+
 .herotext-h1-text{
   @apply font-normal md:leading-24 leading-12
 }
+
 .heroactions-container{
   @apply flex lg:flex-col gap-2 md:gap-0 justify-between items-end self-stretch
 }

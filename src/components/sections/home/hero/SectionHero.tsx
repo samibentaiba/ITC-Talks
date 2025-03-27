@@ -5,31 +5,42 @@ import Image from "next/image";
 import { RiArrowLeftFill, RiArrowRightFill } from "react-icons/ri";
 import "@/styles/hero.css";
 export default SectionHero;
-
 function SectionHero() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollToImage = (direction: number) => {
+    const newIndex = (currentIndex + direction + images.length) % images.length;
+    scrollContainerRef.current?.scrollTo({
+      left: (scrollContainerRef.current.children[newIndex] as HTMLElement)?.offsetLeft || 0,
+      behavior: "smooth"
+    });
+    setCurrentIndex(newIndex);
+  };
+
   return (
-    <section className="hero-section ">
-      <MainText />
-      <ImageCarousel />
+    <section className="hero-section">
+      <MainText scrollToImage={scrollToImage} />
+      <ImageCarousel scrollContainerRef={scrollContainerRef} setCurrentIndex={setCurrentIndex} currentIndex={currentIndex} />
     </section>
   );
 }
 
-function MainText() {
+function MainText({ scrollToImage }: { scrollToImage: (index: number) => void }) {
   return (
     <main className="hero-main">
-      <div className="hero-content">
+      <div className="w-full text-white">
         <div className="hero-desktop">
           <HeroText size="text-7xl" />
-          <HeroActions btnSize="px-6 py-3 text-xl" />
+          <HeroActions scrollToImage={scrollToImage} btnSize="px-6 py-3 text-xl" />
         </div>
         <div className="hero-tablet">
           <HeroText size="text-5xl" />
-          <HeroActions btnSize="px-6 py-2 text-lg" />
+          <HeroActions scrollToImage={scrollToImage} btnSize="px-6 py-2 text-lg" />
         </div>
         <div className="hero-mobile">
           <HeroText size="text-3xl" />
-          <HeroActions btnSize="w-full px-6 py-2 text-sm" />
+          <HeroActions scrollToImage={scrollToImage} btnSize="w-full px-6 py-2 text-sm" />
         </div>
       </div>
     </main>
@@ -37,43 +48,39 @@ function MainText() {
 }
 export function ComingSoon() {
   return (
-    <div className="coming-soon-container">
-      <Image src="images/ComingSoon.svg" fill className="coming-soon-image" alt="coming soon" />
-      <div className="coming-soon-fc border-opacity-10" style={{ borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
-        <div className="coming-soon-ftfc font-syne text-opacity-60 ">April 8, 2025</div>
-        <div className="coming-soon-stfc font-syne text-opacity-60 ">Auditorium, Saad Dahlab University</div>
+    <div className="coming-soon-c">
+      <Image src="images/ComingSoon.svg" fill className="coming-soon-i" alt="coming soon" />
+      <div className="coming-soon-tc border-opacity-10" style={{ borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
+        <div className="coming-soon-t uppercase opacity-0 font-syne text-opacity-60 ">April 8, 2025</div>
+        <div className="coming-soon-t opacity-0 font-syne text-opacity-60 ">Auditorium, Saad Dahlab University</div>
       </div>
-      <div className="coming-soon-sc border-opacity-10" style={{ borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
-        <div className="coming-soon-ftsc font-syne text-opacity-60 ">April 8, 2025</div>
-        <div className="coming-soon-stsc font-syne text-opacity-60 ">Auditorium, Saad Dahlab University</div>
+      <div className="coming-soon-tc max-w-[1720px] border-opacity-10" style={{ borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
+        <div className="coming-soon-t uppercase font-syne text-opacity-60 ">April 8, 2025</div>
+        <div className="coming-soon-t font-syne text-opacity-60 ">Auditorium, Saad Dahlab University</div>
       </div>
     </div>
   );
 }
 
-function ImageCarousel() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
-  const scrollToImage = (index: number) => {
-    scrollContainerRef.current?.scrollTo({
-      left: (scrollContainerRef.current.children[index] as HTMLElement)?.offsetLeft || 0,
-      behavior: "smooth"
-    });
-    setCurrentIndex(index);
-  };
-
+function ImageCarousel({ scrollContainerRef, setCurrentIndex, currentIndex }: { scrollContainerRef: React.MutableRefObject<HTMLDivElement | null>; setCurrentIndex: React.Dispatch<React.SetStateAction<number>>; currentIndex: number }) {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
-        scrollToImage((currentIndex + (e.key === "ArrowLeft" ? -1 : 1) + images.length) % images.length);
+        const direction = e.key === "ArrowLeft" ? -1 : 1;
+        setCurrentIndex((prevIndex) => (prevIndex + direction + images.length) % images.length);
+        scrollContainerRef.current?.scrollTo({
+          left: (scrollContainerRef.current.children[(currentIndex + direction + images.length) % images.length] as HTMLElement)?.offsetLeft || 0,
+          behavior: "smooth"
+        });
       }
     };
+
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [currentIndex]);
 
   return (
-    <div className="scrollbar-hide relative ">
+    <div className="scrollbar-hide relative">
       <div ref={scrollContainerRef} className="imagecarousel-demicontainer scrollbar-hide" style={{ scrollbarWidth: "none" }}>
         {images.map(({ src, alt, caption }, index) => (
           <div key={index} className="flex-shrink-0 snap-center">
@@ -99,20 +106,20 @@ const HeroText = ({ size }: { size: string }) => (
   </div>
 );
 
-const HeroActions = ({ btnSize }: { btnSize: string }) => (
+const HeroActions = ({ btnSize, scrollToImage }: { btnSize: string; scrollToImage: (index: number) => void }) => (
   <div className="heroactions-container">
     <button className={`hero-button ${btnSize}`}>
       <span className="text-stone-900 font-medium">Reserve Your Spot Today</span>
     </button>
     <div className="flex gap-2 md:gap-4">
-      <ArrowButton Icon={RiArrowLeftFill} />
-      <ArrowButton Icon={RiArrowRightFill} />
+      <ArrowButton Icon={RiArrowLeftFill} direction="left" scrollToImage={scrollToImage} />
+      <ArrowButton Icon={RiArrowRightFill} direction="right" scrollToImage={scrollToImage} />
     </div>
   </div>
 );
 
-const ArrowButton = ({ Icon }: { Icon: typeof RiArrowLeftFill }) => (
-  <button className="arrow-button">
+const ArrowButton = ({ Icon, direction, scrollToImage }: { Icon: typeof RiArrowLeftFill; direction: "left" | "right"; scrollToImage: (index: number) => void }) => (
+  <button className="arrow-button" onClick={() => scrollToImage(direction === "left" ? -1 : 1)}>
     <Icon className="w-5 h-5 md:w-8 md:h-5 sm:w-6 sm:h-6 text-stone-900" />
   </button>
 );
