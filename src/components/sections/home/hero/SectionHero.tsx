@@ -131,8 +131,7 @@ const HeroText = ({ size }: { size: string }) => (
       Join the Conversation!
     </h1>
     <p className="font-normal ">
-      — Be part of a day filled with expert insights, engaging talks, and great
-      conversations
+      — Be part of a day filled with expert insights, engaging talks, and great conversations
     </p>
   </div>
 );
