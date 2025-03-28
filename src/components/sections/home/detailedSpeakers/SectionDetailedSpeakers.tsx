@@ -80,7 +80,7 @@ function DataCard({
   description: string;
 }) {
   return (
-    <div className="w-full h-[612px] p-10 bg-zinc-200 rounded-3xl flex flex-col justify-between items-start">
+    <div className="w-full h-full p-10 bg-zinc-200 rounded-3xl flex flex-col justify-between items-start">
       <div className="w-full flex flex-col gap-1">
         <div className="flex justify-between items-center">
           <div className="text-stone-900 text-3xl font-semibold font-Syne">
