@@ -24,9 +24,9 @@ export default function App() {
   }, [])
 
   return (
-    <div className="bg-black min-h-screen">
+    <>
       {isDesktop ? <SectionDetailedSpeakers /> : <ResponsiveSpeakersLayout />}
-    </div>
+    </>
   )
 }
 
@@ -35,10 +35,10 @@ function SectionDetailedSpeakers(): ReactElement {
   return (
     <section className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 max-w-[1880px] flex flex-col items-center py-4">
       <div className="self-stretch flex justify-between items-center mb-8">
-        <div className="text-white text-8xl font-bold font-Syne uppercase">
+        <div className="text-white text-9xl font-bold font-Syne uppercase">
           Speakers
         </div>
-        <div className="w-96 text-white text-xl font-normal font-Syne leading-loose">
+        <div className="w-96 text-white text-xl font-normal font-Syne leading-relaxed">
           Meet the IT experts shaping the future of technology
         </div>
       </div>

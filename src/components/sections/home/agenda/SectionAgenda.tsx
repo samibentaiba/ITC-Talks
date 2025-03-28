@@ -10,7 +10,7 @@ export default function SectionAgenda(): ReactElement {
   return (
     <section className="mx-auto flex-col w-full px-[1rem] sm:px-[1.5rem] md:px-[2rem] lg:px-[2.5rem] max-w-[1880px] flex items-center justify-between py-4">
       <div className="flex flex-col md:flex-row justify-between mb-4 md:mb-8 w-full">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 md:mb-6">AGENDA</h2>
+        <h2 className="text-3xl sm:text-4xl md:text-9xl font-bold mb-2 md:mb-6">AGENDA</h2>
         <p className="text-xs sm:text-sm max-w-full md:max-w-[15%] mb-4 md:mb-0">
           April 8, 2025 | Auditorium, Saad Dahlab University
         </p>
