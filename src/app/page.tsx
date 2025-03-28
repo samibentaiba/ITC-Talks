@@ -24,6 +24,7 @@ export default function Home() {
       <SectionAboutNSpeakers />
       {/* Agenda */}
       <SectionAgenda />
+      <SectionAboutNSpeakers/>
       {/* Detailed Speakers Section */}
       <SectionDetailedSpeakers />
       {/* Why Attend Section */}
