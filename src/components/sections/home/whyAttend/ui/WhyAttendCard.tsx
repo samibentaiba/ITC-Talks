@@ -1,23 +1,32 @@
 import { ReactElement } from "react";
-
+import Image from "next/image";
 interface WhyAttendCardProps {
   number: string;
   title: string;
   description: string;
 }
 
-export default function WhyAttendCard(
-  { number, title, description }: WhyAttendCardProps,
-): ReactElement {
+export default function WhyAttendCard({
+  number,
+  title,
+  description,
+}: WhyAttendCardProps): ReactElement {
   return (
-    <div className="bg-gray-900 rounded-lg p-6">
-      <div className="flex items-start space-x-4 mb-4">
-        <div className="text-5xl font-bold bg-gradient-to-br from-red-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
-          {number}
-        </div>
+    <div className="w-full h-full max-h-[270px] relative bg-stone-900 rounded-3xl overflow-hidden">
+      <Image
+        src={`images/${number}.svg`}
+        width={300}
+        height={200}
+        alt={`${number}`}
+        className="left-[5%] top-[50%]  absolute justify-start"
+      />
+
+      <div className="left-[10%] top-[60px] absolute justify-start text-white text-xl font-bold font-Syne uppercase leading-loose">
+        {title}
       </div>
-      <h3 className="text-lg font-bold uppercase mb-2">{title}</h3>
-      <p className="text-sm text-gray-400">{description}</p>
+      <div className="w-[40%] left-[400px] top-[150px] absolute justify-start text-white text-lg font-normal font-Syne leading-loose">
+        {description}
+      </div>
     </div>
   );
 }
