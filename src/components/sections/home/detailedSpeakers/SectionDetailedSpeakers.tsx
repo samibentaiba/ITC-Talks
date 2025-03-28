@@ -10,7 +10,7 @@ export default function App() {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 1024)
+      setIsDesktop(window.innerWidth >= 1320)
     }
 
     // Initial check
@@ -79,7 +79,7 @@ function ResponsiveSpeakersLayout() {
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768)
-      setIsTablet(window.innerWidth >= 768 && window.innerWidth < 1024)
+      setIsTablet(window.innerWidth >= 768 && window.innerWidth < 1320)
     }
 
     // Initial check
@@ -121,9 +121,9 @@ function ResponsiveSpeakersLayout() {
   if (isTablet) {
     return (
       <section className="mx-auto w-full px-6 max-w-[1880px] flex flex-col items-center py-6 bg-black">
-        <div className="self-stretch flex flex-col md:flex-row justify-between items-start mb-8 gap-4">
+        <div className="self-stretch flex flex-col  justify-between items-start mb-8 gap-4">
           <div className="text-white text-6xl font-bold font-Syne uppercase">Speakers</div>
-          <div className="text-white text-xl font-normal font-Syne leading-loose max-w-[384px]">
+          <div className="text-white text-xl font-normal font-Syne leading-loose w-full">
             Meet the IT experts shaping the future of technology
           </div>
         </div>

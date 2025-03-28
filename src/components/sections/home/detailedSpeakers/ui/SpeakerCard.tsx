@@ -13,7 +13,7 @@ export function DataCard({
 }) {
   return (
     <div className="w-full h-full p-6 sm:p-8 md:p-10 bg-zinc-200 rounded-3xl flex flex-col justify-between items-start">
-      <div className="w-full flex flex-col gap-1">
+      <div className="w-full flex flex-col h-28 gap-1">
         <div className="flex justify-between items-center">
           <div className="text-stone-900 text-2xl sm:text-3xl font-semibold font-Syne">{name}</div>
           <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
