@@ -13,67 +13,40 @@ const speakers: Speaker[] = mockdata.speakers;
 
 export default function SectionDetailedSpeakers(): ReactElement {
   return (
-    <section className="mx-auto flex-col w-full px-[1rem] sm:px-[1.5rem] md:px-[2rem] lg:px-[2.5rem] max-w-[1720px] flex items-center justify-between py-4">
-      <div className="self-stretch inline-flex justify-between items-center">
-        <div className="justify-start text-white text-8xl font-bold font-['Syne'] uppercase">
+    <section className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 max-w-[1880px] flex flex-col items-center py-4">
+      <div className="self-stretch flex justify-between items-center mb-8">
+        <div className="text-white text-8xl font-bold font-['Syne'] uppercase">
           Speakers
         </div>
-        <div className="w-96 justify-start text-white text-xl font-normal font-['Syne'] leading-loose">
+        <div className="w-96 text-white text-xl font-normal font-['Syne'] leading-loose">
           Meet the IT experts shaping the future of technology
         </div>
       </div>
-      <div className="self-stretch flex flex-col justify-start items-start gap-10">
-        {Array.from(
-          { length: Math.ceil(speakers.length / 2) },
-          (_, rowIndex) => (
-            <div
-              key={rowIndex}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "40px",
-                alignSelf: "stretch",
-              }}
-            >
-              {speakers
-                .slice(rowIndex * 2, rowIndex * 2 + 2)
-                .map((speaker, index) => (
-                  <div
-                    key={index}
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "40px",
-                    }}
-                  >
-                    <div className="w-[400px] h-[612px] p-10 bg-zinc-200 rounded-3xl inline-flex flex-col justify-between items-start">
-                      <div className="self-stretch flex flex-col justify-start items-start gap-1">
-                        <div className="self-stretch inline-flex justify-between items-center">
-                          <div className="justify-start text-stone-900 text-3xl font-semibold font-['Syne']">
-                            {speaker.name}
-                          </div>
-                          <div className="w-9 h-9 bg-stone-900 bg-opacity-60" />
-                        </div>
-                        <div className="self-stretch justify-start text-stone-900 text-opacity-60 text-xl font-normal font-['Syne']">
-                          {speaker.title}
-                        </div>
-                      </div>
-                      <div className="self-stretch justify-start text-stone-900 text-opacity-80 text-xl font-medium font-['Syne'] leading-loose">
-                        {speaker.description}
-                      </div>
-                    </div>
-                    <div className="w-[400px] h-[612px] relative rounded-3xl overflow-hidden">
-                      <img
-                        className="w-[400px] h-[612px] left-0 top-0 absolute"
-                        src={speaker.image}
-                        alt={speaker.name}
-                      />
-                    </div>
-                  </div>
-                ))}
-            </div>
-          )
-        )}
+      <div className="grid grid-cols-4  grid-row-1 justify-between gap-[40px] items-stretch  w-full">
+        <DataCard
+          name={speakers[0].name}
+          title={speakers[0].title}
+          description={speakers[0].description}
+        />
+        <ImageCard name={speakers[0].name} image={speakers[0].image} />
+        <DataCard
+          name={speakers[1].name}
+          title={speakers[1].title}
+          description={speakers[1].description}
+        />
+        <ImageCard name={speakers[1].name} image={speakers[1].image} />
+        <DataCard
+          name={speakers[2].name}
+          title={speakers[2].title}
+          description={speakers[2].description}
+        />
+        <ImageCard name={speakers[2].name} image={speakers[2].image} />
+        <DataCard
+          name={speakers[3].name}
+          title={speakers[3].title}
+          description={speakers[3].description}
+        />
+        <ImageCard name={speakers[3].name} image={speakers[3].image} />
       </div>
     </section>
   );
@@ -90,4 +63,40 @@ if (
   )
 ) {
   throw new Error("Invalid mockdata format. Please check mockdata.json");
+}
+
+
+function ImageCard({ image, name }: { image: string; name: string }) {
+  return (
+      <img className="w-full h-full object-cover" src={image} alt={name} />
+  );
+}
+
+function DataCard({
+  name,
+  title,
+  description,
+}: {
+  name: string;
+  title: string;
+  description: string;
+}) {
+  return (
+    <div className="w-full h-[612px] p-10 bg-zinc-200 rounded-3xl flex flex-col justify-between items-start">
+      <div className="w-full flex flex-col gap-1">
+        <div className="flex justify-between items-center">
+          <div className="text-stone-900 text-3xl font-semibold font-['Syne']">
+            {name}
+          </div>
+          <div className="w-9 h-9 bg-stone-900 bg-opacity-60" />
+        </div>
+        <div className="text-stone-900 text-opacity-60 text-xl font-normal font-['Syne']">
+          {title}
+        </div>
+      </div>
+      <div className="text-stone-900 text-opacity-80 text-xl font-medium font-['Syne'] leading-loose">
+        {description}
+      </div>
+    </div>
+  );
 }
