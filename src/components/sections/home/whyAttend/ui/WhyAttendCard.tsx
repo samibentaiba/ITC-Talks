@@ -60,7 +60,7 @@ export default function WhyAttendCard({
     return (
       <div className="w-full p-14 h-[270px] relative bg-stone-900 rounded-3xl overflow-hidden">
         {/* Title positioned exactly as in tablet image */}
-        <div className="text-white text-base font-bold font-Syne uppercase ">
+        <div className="text-white text-2xl font-bold font-Syne uppercase ">
           {title}
         </div>
 
@@ -85,28 +85,28 @@ export default function WhyAttendCard({
 
   // Mobile layout (< 768px)
   return (
-    <div className="w-full h-full relative bg-stone-900 rounded-3xl overflow-hidden p-6">
+    <div className="w-full h-[270px] relative bg-stone-900 rounded-3xl overflow-hidden p-8">
       {/* Title positioned exactly as in mobile image */}
-      <div className="text-white text-base font-bold font-Syne uppercase mb-6">
+      <div className="text-white text-xl font-bold font-Syne uppercase mb-6">
         {title}
       </div>
 
+      {/* Description positioned exactly as in mobile image */}
+      <div className="text-white text-lg  font-normal font-Syne text-center">
+        {description}
+      </div>
       {/* Number SVG positioned exactly as in mobile image */}
-      <div className="w-full h-[80px] relative mb-4 flex justify-center">
+      <div className=" w-full absolute h-[90px] left-[0%] top-[70%] mb-4 flex justify-center">
         <Image
           src={`/images/${number}.svg`}
-          width={150}
-          height={80}
+          width={200}
+          height={200}
           alt={`${number}`}
           priority
           className="object-contain"
         />
       </div>
 
-      {/* Description positioned exactly as in mobile image */}
-      <div className="text-white text-sm font-normal font-Syne text-center">
-        {description}
-      </div>
     </div>
   );
 }
