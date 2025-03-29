@@ -1,4 +1,5 @@
 import { ReactElement } from "react";
+import Image from "next/image";
 
 const classes: Record<
   | "footer"
@@ -48,8 +49,12 @@ const classes: Record<
 };
 export default function SectionFooter() {
   const menuItems = ["Home", "About", "Agenda", "Speakers"];
-  const socialIcons = Array(3).fill(null);
-  const poweredByItems = Array(4).fill(null);
+  const socialIcons = [
+    "/images/Facebook.svg",
+    "/images/Instagram.svg",
+    "/images/LinkedIn.svg",
+  ];
+  const poweredByItems = ["/images/WhiteItc.svg"];
 
   return (
     <footer className={classes.footer}>
@@ -74,19 +79,28 @@ export default function SectionFooter() {
           />
           <InfoSection title="Follow US">
             <div className={classes.iconsContainer}>
-              {socialIcons.map((_, index) => (
-                <div key={index} className={classes.icon} />
+              {socialIcons.map((src, index) => (
+                <Image
+                  key={index}
+                  src={src}
+                  alt="Social Icon"
+                  width={30}
+                  height={30}
+                  
+                />
               ))}
             </div>
           </InfoSection>
           <InfoSection title="Powered By">
             <div className={classes.poweredByContainer}>
-              {poweredByItems.map((_, index) => (
-                <div
+              {poweredByItems.map((src, index) => (
+                <img
                   key={index}
-                  className={
-                    classes[`poweredByItem${index + 1}` as keyof typeof classes]
-                  }
+                  src={src}
+                  width={200}
+                  height={200}
+                  alt="Powered By Logo"
+                  
                 />
               ))}
             </div>

@@ -21,12 +21,12 @@ export default function SectionSponsors(): ReactElement {
         <div className="flex desktop-marquee mobile-marquee ">
           {allSponsors.map(
             (sponsor: { brand: string; src: string }, index: number): ReactElement => (
-              <div key={`${sponsor.brand}-${index}`} className="flex justify-center mx-4 md:mx-20 min-w-[120px]">
+              <div key={`${sponsor.brand}-${index}`} className="flex justify-center mx-[5%] min-w-[20%] md:min-w-[10%]">
                 <Image
                   src={sponsor.src || "/placeholder.svg"}
                   alt={sponsor.brand}
                   width={100}
-                  height={30}
+                  height={100}
                   className="brightness-0 invert" // Makes logos white
                 />
               </div>

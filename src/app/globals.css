@@ -21,7 +21,7 @@ body {
   }
 
   .mobile-marquee {
-    animation: marquee 5s linear infinite;
+    animation: marquee 12s linear infinite;
   }
 
   @keyframes marquee {
@@ -29,13 +29,13 @@ body {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-50%);
+      transform: translateX(-75%);
     }  
   }
   
   @media screen and (min-width: 640px) {
     .desktop-marquee {
-      animation: marquee 20s linear infinite;
+      animation: marquee 24s linear infinite;
     }
     
   }
