@@ -1,29 +1,112 @@
-import type { ReactElement } from "react"
-import Image from "next/image"
+"use client";
+import { type ReactElement, useEffect, useState } from "react";
+import Image from "next/image";
+
 interface WhyAttendCardProps {
-  number: string
-  title: string
-  description: string
+  number: string;
+  title: string;
+  description: string;
 }
 
-export default function WhyAttendCard({ number, title, description }: WhyAttendCardProps): ReactElement {
-  return (
-    <div className="w-full h-full relative bg-stone-900 rounded-3xl overflow-hidden p-4 sm:p-6">
-      {/* Title positioned at top */}
-      <div className="text-white text-xl font-bold font-Syne uppercase leading-loose m-6">{title}</div>
+export default function WhyAttendCard({
+  number,
+  title,
+  description,
+}: WhyAttendCardProps): ReactElement {
+  const [screenWidth, setScreenWidth] = useState(0);
 
-      <div className="flex flex-row gap-[10%] items-start absolute md:top-[50%] sm:top-[30%] top-[40%]">
-        {/* Number SVG */}
-        <div className="w-[60%] md:w-[40%] h-full">
-          <Image src={`/images/${number}.svg`} width={300} height={200} className="h-40" alt={`${number}`} priority />
+  useEffect(() => {
+    // Set initial width
+    setScreenWidth(window.innerWidth);
+
+    // Update width on resize
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Desktop layout (>= 1320px)
+  if (screenWidth >= 1024) {
+    return (
+      <div className="w-full h-full p-10 relative bg-stone-900 rounded-3xl overflow-hidden">
+        {/* Title positioned exactly as in desktop image */}
+        <div className="absolute left-[10%] top-[25%] text-white text-xl font-bold font-Syne uppercase">
+          {title}
         </div>
 
-        {/* Description positioned to the right of the number */}
-        <div className="text-white text-xl  font-normal font-Syne leading-relaxed  max-w-[60%] md:max-w-[45%]">
+        {/* Number SVG positioned exactly as in desktop image */}
+        <div className="absolute h-[40%] w-[40%] left-[5%] top-[60%]">
+          <Image
+            src={`/images/${number}.svg`}
+            fill
+            alt={`${number}`}
+            priority
+          />
+        </div>
+
+        {/* Description positioned exactly as in desktop image */}
+        <div className="absolute w-[45%] left-[50%] top-[60%] pb-8  text-white text-lg font-normal font-Syne">
           {description}
         </div>
       </div>
-    </div>
-  )
-}
+    );
+  }
 
+  // Tablet layout (768px - 1319px)
+  if (screenWidth >= 768) {
+    return (
+      <div className="w-full p-14 h-[270px] relative bg-stone-900 rounded-3xl overflow-hidden">
+        {/* Title positioned exactly as in tablet image */}
+        <div className="text-white text-base font-bold font-Syne uppercase ">
+          {title}
+        </div>
+
+        <div className="flex flex-row items-center">
+          {/* Number SVG positioned exactly as in tablet image */}
+          <div className="absolute h-[60%] w-[40%] right-[55%] top-[50%]">
+            <Image
+              src={`/images/${number}.svg`}
+              fill
+              alt={`${number}`}
+              priority
+            />
+          </div>
+          {/* Description positioned exactly as in Tablet image */}
+          <div className="absolute w-[45%] left-[50%] top-[50%] pb-8  text-white text-xl font-normal font-Syne">
+            {description}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Mobile layout (< 768px)
+  return (
+    <div className="w-full h-full relative bg-stone-900 rounded-3xl overflow-hidden p-6">
+      {/* Title positioned exactly as in mobile image */}
+      <div className="text-white text-base font-bold font-Syne uppercase mb-6">
+        {title}
+      </div>
+
+      {/* Number SVG positioned exactly as in mobile image */}
+      <div className="w-full h-[80px] relative mb-4 flex justify-center">
+        <Image
+          src={`/images/${number}.svg`}
+          width={150}
+          height={80}
+          alt={`${number}`}
+          priority
+          className="object-contain"
+        />
+      </div>
+
+      {/* Description positioned exactly as in mobile image */}
+      <div className="text-white text-sm font-normal font-Syne text-center">
+        {description}
+      </div>
+    </div>
+  );
+}
