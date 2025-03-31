@@ -10,7 +10,7 @@ import SectionRegisterNow from "@/components/sections/home/registerNow/SectionRe
 import { SectionComingSoon } from "@/components/sections/home/hero/SectionHero";
 export default function Home() {
   return (
-    <main className="bg-black min-h-screen overflow-hidden  text-white">
+    <main className="bg-black min-h-screen overflow-hidden text-white">
       {/* Hero Section */}
       <SectionHero />
       {/* ComingSoon */}

@@ -38,8 +38,10 @@ export default function SectionAgenda(): ReactElement {
 
 function DesktopAgenda(): ReactElement {
   return (
-    <section className="mx-auto flex-col w-full px-10 max-w-[1880px] flex items-center justify-between py-4"
-    id="agenda">
+    <section
+      className="mx-auto flex-col w-full px-10 max-w-[1880px] flex items-center justify-between py-4"
+      id="agenda"
+    >
       <div className="flex flex-row justify-between mb-8 w-full">
         <h2 className="text-9xl font-bold mb-6">AGENDA</h2>
         <p className="text-sm max-w-[15%] mb-0">
@@ -48,7 +50,7 @@ function DesktopAgenda(): ReactElement {
       </div>
       <div className="self-stretch p-14 bg-[#1C1A1A] w-full rounded-[3rem] inline-flex flex-col justify-start items-center gap-20">
         <Schedule />
-        <StartButton text="Register now" deviceType="desktop"/>
+        <StartButton text="Register now" deviceType="desktop" />
       </div>
     </section>
   );
@@ -56,7 +58,10 @@ function DesktopAgenda(): ReactElement {
 
 function TabletAgenda(): ReactElement {
   return (
-    <section className="mx-auto flex-col w-full p-[24px] max-w-[1880px] flex items-center justify-between" id="agenda">
+    <section
+      className="mx-auto flex-col w-full p-[24px] max-w-[1880px] flex items-center justify-between"
+      id="agenda"
+    >
       <div className="flex flex-col mb-4 w-full">
         <h2 className="text-8xl font-bold mb-2">AGENDA</h2>
         <p className="text-2xl max-w-full mb-4">
@@ -65,7 +70,7 @@ function TabletAgenda(): ReactElement {
       </div>
       <div className="self-stretch p-4 bg-[#1C1A1A] w-full rounded-[24px] inline-flex flex-col justify-start items-center gap-10">
         <TabletSchedule />
-        <StartButton text="Register now" deviceType="tablet"/>
+        <StartButton text="Register now" deviceType="tablet" />
       </div>
     </section>
   );
@@ -73,7 +78,10 @@ function TabletAgenda(): ReactElement {
 
 function MobileAgenda(): ReactElement {
   return (
-    <section className="mx-auto flex-col w-full px-[16px] max-w-[1880px] flex items-center justify-between" id="agenda">
+    <section
+      className="mx-auto flex-col w-full px-[16px] max-w-[1880px] flex items-center justify-between"
+      id="agenda"
+    >
       <div className="flex flex-col mb-4 w-full">
         <h2 className="text-3xl font-bold mb-2">AGENDA</h2>
         <p className="text-xs max-w-full mb-4">
@@ -82,7 +90,7 @@ function MobileAgenda(): ReactElement {
       </div>
       <div className="self-stretch p-4 bg-[#1C1A1A] w-full rounded-[24px] inline-flex flex-col justify-start items-center gap-10">
         <MobileSchedule />
-        <StartButton text="Register now" deviceType="mobile"/>
+        <StartButton text="Register now" deviceType="mobile" />
       </div>
     </section>
   );
@@ -122,12 +130,18 @@ const MobileScheduleItem = ({
   time,
   title,
   description,
+  border,
 }: {
   time: string;
   title: string;
   description: string;
+  border: boolean;
 }) => (
-  <div className="w-full px-4 py-6 border-b border-white border-opacity-60 flex flex-col justify-start items-start gap-3">
+  <div
+    className={`w-full px-4 py-6 flex flex-col justify-start items-start gap-3 ${
+      border ? "border-b border-white border-opacity-60" : ""
+    }`}
+  >
     <div className="flex justify-between w-full">
       <div className="text-white text-xl font-bold font-Syne">{title}</div>
       <div className="text-white text-xl font-bold font-Syne">{time}</div>
@@ -141,12 +155,18 @@ const TabletScheduleItem = ({
   time,
   title,
   description,
+  border,
 }: {
   time: string;
   title: string;
   description: string;
+  border: boolean;
 }) => (
-  <div className="w-full px-4 py-6 border-b border-white border-opacity-60 flex flex-col justify-start items-start gap-3">
+  <div
+    className={`w-full px-4 py-6 flex flex-col justify-start items-start gap-3 ${
+      border ? "border-b border-white border-opacity-60" : ""
+    }`}
+  >
     <div className="flex justify-between w-full">
       <div className="text-white text-3xl font-bold font-Syne">{title}</div>
       <div className="text-white text-3xl font-bold font-Syne">{time}</div>
@@ -154,117 +174,6 @@ const TabletScheduleItem = ({
     <div className="self-stretch text-white text-opacity-80 text-2xl font-normal font-Syne leading-relaxed">
       {description}
     </div>
-  </div>
-);
-const TabletSchedule = () => (
-  <div className="self-stretch flex flex-col justify-start items-start">
-    {[
-      [
-        {
-          time: "9:00 AM",
-          title: "Check-in",
-          description:
-            "Arrive early to get settled and enjoy a smooth start to the event.",
-          border: true,
-        },
-        {
-          time: "9:45 AM",
-          title: "Opening Ceremony",
-          description:
-            "Welcome message and overview of the day's exciting schedule.",
-          border: true,
-        },
-      ],
-      [
-        {
-          time: "10:00 AM",
-          title: "1st Speaker",
-          description:
-            "Hear from a leading expert in the IT field as they share their insights and experiences.",
-          border: true,
-        },
-        {
-          time: "10:30 AM",
-          title: "2nd Speaker",
-          description:
-            "Gain valuable knowledge from another speaker shaping the future of technology.",
-          border: true,
-        },
-      ],
-      [
-        {
-          time: "11:00 AM",
-          title: "3rd Speaker",
-          description:
-            "A thought-provoking talk that will inspire and challenge your thinking.",
-          border: true,
-        },
-        {
-          time: "11:30 AM",
-          title: "Q&A",
-          description:
-            "Get your questions answered and dive deeper into the topics discussed.",
-          border: true,
-        },
-      ],
-      [
-        {
-          time: "11:45 AM",
-          title: "Quiz",
-          description:
-            "Test your knowledge with a fun and engaging quiz related to the topics covered.",
-          border: false,
-        },
-        {
-          time: "12:00 PM",
-          title: "Lunch Break",
-          description: "Enjoy a break and network with fellow attendees.",
-          border: false,
-        },
-      ],
-      [
-        {
-          time: "1:00 PM",
-          title: "4th Speaker",
-          description:
-            "Another expert takes the stage to provide insights into the latest trends in the tech world.",
-          border: false,
-        },
-        {
-          time: "1:30 PM",
-          title: "5th Speaker",
-          description:
-            "Learn from a thought leader with practical advice and real-world experience.",
-          border: false,
-        },
-      ],
-      [
-        {
-          time: "2:00 PM",
-          title: "Q&A",
-          description:
-            "Ask questions, engage with the speakers, and deepen your understanding of key topics.",
-          border: false,
-        },
-        {
-          time: "2:15 PM",
-          title: "Closing Ceremony",
-          description:
-            "Wrap up the event with final thoughts and acknowledgements.",
-          border: false,
-        },
-      ],
-    ]
-
-      .flat()
-      .map((item, index) => (
-        <TabletScheduleItem
-          key={index}
-          time={item.time}
-          title={item.title}
-          description={item.description}
-        />
-      ))}
   </div>
 );
 
@@ -496,8 +405,7 @@ const Schedule = () => (
     ))}
   </div>
 );
-
-const MobileSchedule = () => (
+const TabletSchedule = () => (
   <div className="self-stretch flex flex-col justify-start items-start">
     {[
       [
@@ -560,7 +468,7 @@ const MobileSchedule = () => (
           time: "12:00 PM",
           title: "Lunch Break",
           description: "Enjoy a break and network with fellow attendees.",
-          border: false,
+          border: true,
         },
       ],
       [
@@ -569,14 +477,14 @@ const MobileSchedule = () => (
           title: "4th Speaker",
           description:
             "Another expert takes the stage to provide insights into the latest trends in the tech world.",
-          border: false,
+          border: true,
         },
         {
           time: "1:30 PM",
           title: "5th Speaker",
           description:
             "Learn from a thought leader with practical advice and real-world experience.",
-          border: false,
+          border: true,
         },
       ],
       [
@@ -585,7 +493,119 @@ const MobileSchedule = () => (
           title: "Q&A",
           description:
             "Ask questions, engage with the speakers, and deepen your understanding of key topics.",
+          border: true,
+        },
+        {
+          time: "2:15 PM",
+          title: "Closing Ceremony",
+          description:
+            "Wrap up the event with final thoughts and acknowledgements.",
           border: false,
+        },
+      ],
+    ]
+
+      .flat()
+      .map((item, index) => (
+        <TabletScheduleItem
+          key={index}
+          time={item.time}
+          title={item.title}
+          description={item.description}
+          border={item.border}
+        />
+      ))}
+  </div>
+);
+const MobileSchedule = () => (
+  <div className="self-stretch flex flex-col justify-start items-start">
+    {[
+      [
+        {
+          time: "9:00 AM",
+          title: "Check-in",
+          description:
+            "Arrive early to get settled and enjoy a smooth start to the event.",
+          border: true,
+        },
+        {
+          time: "9:45 AM",
+          title: "Opening Ceremony",
+          description:
+            "Welcome message and overview of the day's exciting schedule.",
+          border: true,
+        },
+      ],
+      [
+        {
+          time: "10:00 AM",
+          title: "1st Speaker",
+          description:
+            "Hear from a leading expert in the IT field as they share their insights and experiences.",
+          border: true,
+        },
+        {
+          time: "10:30 AM",
+          title: "2nd Speaker",
+          description:
+            "Gain valuable knowledge from another speaker shaping the future of technology.",
+          border: true,
+        },
+      ],
+      [
+        {
+          time: "11:00 AM",
+          title: "3rd Speaker",
+          description:
+            "A thought-provoking talk that will inspire and challenge your thinking.",
+          border: true,
+        },
+        {
+          time: "11:30 AM",
+          title: "Q&A",
+          description:
+            "Get your questions answered and dive deeper into the topics discussed.",
+          border: true,
+        },
+      ],
+      [
+        {
+          time: "11:45 AM",
+          title: "Quiz",
+          description:
+            "Test your knowledge with a fun and engaging quiz related to the topics covered.",
+          border: true,
+        },
+        {
+          time: "12:00 PM",
+          title: "Lunch Break",
+          description: "Enjoy a break and network with fellow attendees.",
+          border: true,
+        },
+      ],
+      [
+        {
+          time: "1:00 PM",
+          title: "4th Speaker",
+          description:
+            "Another expert takes the stage to provide insights into the latest trends in the tech world.",
+          border: true,
+        },
+        {
+          time: "1:30 PM",
+          title: "5th Speaker",
+          description:
+            "Learn from a thought leader with practical advice and real-world experience.",
+          border: true,
+        },
+      ],
+      [
+        {
+          time: "2:00 PM",
+          title: "Q&A",
+          description:
+            "Ask questions, engage with the speakers, and deepen your understanding of key topics.",
+          border: true,
         },
         {
           time: "2:15 PM",
@@ -603,6 +623,7 @@ const MobileSchedule = () => (
           time={item.time}
           title={item.title}
           description={item.description}
+          border={item.border}
         />
       ))}
   </div>

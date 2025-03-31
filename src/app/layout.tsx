@@ -20,7 +20,7 @@ export default function RootLayout({
           <SectionHeader />
         </div>
 
-        <div className="min-h-screen flex  flex-col ">{children}</div>
+        <div className="min-h-screen flex flex-col ">{children}</div>
 
         <SectionFooter />
       </body>
