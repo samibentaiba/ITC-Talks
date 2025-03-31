@@ -149,7 +149,7 @@ const HeroActions = ({
         Reserve Your Spot Today
       </span>
     </button>
-    <div className="flex gap-2 md:gap-4 animate-fade-in-up delay-300">
+    <div className="flex gap-2 md:gap-4 animate-fade-in-up select-none delay-300">
       <ArrowButton
         Icon={RiArrowLeftFill}
         direction="left"
