@@ -26,7 +26,7 @@ const classes: Record<
   leftSection: "px-20 inline-flex flex-col justify-start items-start gap-16",
   title: "justify-start text-stone-900 text-3xl font-bold font-Syne uppercase",
   menuItem:
-    "self-stretch justify-start text-stone-900 text-xl font-normal font-Syne leading-loose cursor-pointer",
+    "self-start justify-start text-stone-900 text-xl font-normal font-Syne leading-loose cursor-pointer",
   copyright:
     "justify-start text-stone-900 text-opacity-60 text-xl font-normal font-Syne leading-loose",
   rightSection:
