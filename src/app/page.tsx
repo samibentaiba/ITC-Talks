@@ -12,11 +12,10 @@ import SectionRegisterNow from "@/components/sections/home/registerNow/SectionRe
 import { ComingSoon } from "@/components/sections/home/hero/SectionHero";
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-hidden bg-black text-white">
-      {/* Header/Navigation */}
-      <SectionHeader />
+    <main className="bg-black min-h-screen overflow-hidden  text-white">
       {/* Hero Section */}
       <SectionHero />
+      {/* ComingSoon */}
       <ComingSoon />
       {/* Sponsors */}
       <SectionSponsors />
@@ -30,8 +29,6 @@ export default function Home() {
       <SectionWhyAttend />
       {/* Register Now Section */}
       <SectionRegisterNow />
-      {/* Footer */}
-      <SectionFooter />
     </main>
   );
 }

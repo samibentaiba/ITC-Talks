@@ -11,6 +11,7 @@
   "dependencies": {
     "@fontsource/archivo-black": "^5.2.5",
     "@fontsource/syne": "^5.2.5",
+    "motion": "^12.6.2",
     "next": "^15.2.3",
     "next-themes": "^0.4.6",
     "react": "^19.0.0",
