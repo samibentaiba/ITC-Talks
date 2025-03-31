@@ -33,7 +33,7 @@ export default function WhyAttendCard({
     return (
       <div className="w-full h-full p-10 relative bg-stone-900 rounded-3xl overflow-hidden">
         {/* Title positioned exactly as in desktop image */}
-        <div className="absolute left-[10%] top-[25%] text-white text-xl font-bold font-Syne uppercase">
+        <div className="absolute left-[10%] top-[25%] text-white text-2xl font-bold font-Syne uppercase">
           {title}
         </div>
 
@@ -85,9 +85,9 @@ export default function WhyAttendCard({
 
   // Mobile layout (< 768px)
   return (
-    <div className="w-full h-[270px] relative bg-stone-900 rounded-3xl overflow-hidden p-8">
+    <div className="w-full h-[270px] relative bg-stone-900 rounded-3xl overflow-hidden p-12">
       {/* Title positioned exactly as in mobile image */}
-      <div className="text-white text-xl font-bold font-Syne uppercase mb-6">
+      <div className="text-white text-xl font-bold font-Syne uppercase mb-6 text-center">
         {title}
       </div>
 

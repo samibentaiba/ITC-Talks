@@ -2,7 +2,7 @@
 import type { ReactElement } from "react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import StartButton from "./ui/AgendaButton";
+import StartButton from "./ui/StartButton";
 
 export default function SectionAgenda(): ReactElement {
   const [isMobile, setIsMobile] = useState(false);
