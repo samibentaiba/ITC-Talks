@@ -46,7 +46,7 @@ export default function SectionHeader(): ReactElement {
         ))}
       </nav>
 
-      <p className="text-4xl font-bold font-syne md:absolute lg:absolute md:left-[45%] left-[20%] sm:left-[25%] lg:left-[45%] uppercase text-white">
+      <p className="text-4xl font-bold select-none font-syne md:absolute lg:absolute md:left-[45%] left-[20%] sm:left-[25%] lg:left-[45%] uppercase text-white">
         ITC Talks
       </p>
       {/* Mobile Menu Toggle */}
@@ -89,7 +89,7 @@ export default function SectionHeader(): ReactElement {
             <button
               key={id}
               onClick={() => handleScroll(id)}
-              className="text-white text-4xl font-bold font-syne uppercase mb-8 hover:text-gray-300"
+              className="text-white text-4xl font-bold select-none font-syne uppercase mb-8 hover:text-gray-300"
             >
               {name}
             </button>

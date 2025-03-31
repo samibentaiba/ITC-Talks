@@ -145,7 +145,7 @@ const HeroActions = ({
 }) => (
   <div className="heroactions-container animate-fade-in-up delay-200">
     <button className={`hero-button cursor-pointer ${btnSize}`}>
-      <span className="text-stone-900 font-medium">
+      <span className="text-stone-900 font-medium select-none">
         Reserve Your Spot Today
       </span>
     </button>
@@ -174,7 +174,7 @@ const ArrowButton = ({
   scrollToImage: (index: number) => void;
 }) => (
   <button
-    className="arrow-button cursor-pointer"
+    className="arrow-button cursor-pointer select-none"
     onClick={() => scrollToImage(direction === "left" ? -1 : 1)}
   >
     <Icon className="w-5 h-5 md:w-8 md:h-5 sm:w-6 sm:h-6 text-stone-900" />
