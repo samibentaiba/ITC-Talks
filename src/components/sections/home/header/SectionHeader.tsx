@@ -34,8 +34,6 @@ export default function SectionHeader(): ReactElement {
     <header className="mx-auto w-screen px-[1rem] sm:px-[1.5rem] md:px-[2rem] lg:px-[2.5rem] max-w-[1880px] flex items-center justify-between relative py-4">
       {/* Desktop Nav */}
 
-
-
       <nav className="hidden md:flex gap-[1rem] sm:gap-[1.5rem] md:gap-[2rem] lg:gap-[2.5rem]">
         {navItems.map(({ name, id }) => (
           <button
@@ -51,13 +49,13 @@ export default function SectionHeader(): ReactElement {
       <p className="text-4xl font-bold font-syne md:absolute lg:absolute md:left-[45%] left-[20%] sm:left-[25%] lg:left-[45%] uppercase text-white">
         ITC Talks
       </p>
-            {/* Mobile Menu Toggle */}
-            <button
+      {/* Mobile Menu Toggle */}
+      <button
         className="md:hidden text-white"
         aria-label="Menu"
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
       >
-        {mobileMenuOpen ? <X size={24} /> : <MenuIcon />}
+        {!mobileMenuOpen ? <MenuIcon /> : ""}
       </button>
 
       {/* Contact Link (Desktop) */}
