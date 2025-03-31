@@ -20,7 +20,7 @@ export default function Home() {
       {/* Sponsors */}
       <SectionSponsors />
       {/* About & Speakers */}
-      <SectionAboutNSpeakers />
+      <SectionAboutNSpeakers id="speakers" />
       {/* Agenda */}
       <SectionAgenda />
       {/* Detailed Speakers Section */}
