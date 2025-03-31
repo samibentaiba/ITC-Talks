@@ -1,0 +1,36 @@
+.animated-gradient-button {
+  position: relative;
+  border-radius: 100px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.animated-gradient-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(85deg, rgba(195, 65, 36, 0.7) 0%, rgba(1, 71, 255, 0.5) 50%, rgba(195, 65, 36, 0.7) 100%);
+  background-size: 200% 100%;
+  z-index: -1;
+  animation: gradientMove 10s ease infinite;
+  animation-play-state: running;
+}
+
+.animated-gradient-button:hover::before {
+  animation-play-state: paused;
+}
+
+@keyframes gradientMove {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 100%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}

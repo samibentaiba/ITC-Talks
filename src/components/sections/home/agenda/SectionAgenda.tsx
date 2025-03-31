@@ -2,6 +2,7 @@
 import type { ReactElement } from "react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import StartButton from "./ui/AgendaButton";
 
 export default function SectionAgenda(): ReactElement {
   const [isMobile, setIsMobile] = useState(false);
@@ -47,22 +48,7 @@ function DesktopAgenda(): ReactElement {
       </div>
       <div className="self-stretch p-14 bg-[#1C1A1A] w-full rounded-[3rem] inline-flex flex-col justify-start items-center gap-20">
         <Schedule />
-        <button
-          className="flex items-center gap-8 justify-between px-8 py-4 rounded-full"
-          style={{
-            borderRadius: "100px",
-            background:
-              "linear-gradient(85deg, rgba(195, 65, 36, 0.7) 1.59%, rgba(1, 71, 255, 0.5) 121.45%)",
-          }}
-        >
-          <span className="text-xl font-medium font-Syne">Register Now</span>
-          <Image
-            src="images/arrow-empty.svg"
-            alt="arrow empty"
-            width={15}
-            height={15}
-          />
-        </button>
+        <StartButton text="Register now"/>
       </div>
     </section>
   );

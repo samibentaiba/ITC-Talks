@@ -10,7 +10,7 @@ export default function SectionHeader(): ReactElement {
   const navItems: string[] = ["Home", "About", "Agenda", "Speakers"]
 
   return (
-    <header className="mx-auto w-screen px-[1rem] sm:px-[1.5rem] md:px-[2rem] lg:px-[2.5rem] max-w-[1880px] flex items-center justify-between py-4">
+    <header className="mx-auto w-screen px-[1rem] sm:px-[1.5rem] md:px-[2rem] lg:px-[2.5rem] max-w-[1880px] flex items-center justify-between relative py-4">
       <nav className="hidden md:flex gap-[1rem] sm:gap-[1.5rem] md:gap-[2rem] lg:gap-[2.5rem]">
         {navItems.map(
           (text: string, i: number): ReactElement => (
@@ -21,7 +21,7 @@ export default function SectionHeader(): ReactElement {
         )}
       </nav>
 
-      <p className="text-4xl font-bold font-syne uppercase text-white">ITC Talks</p>
+      <p className="text-4xl font-bold font-syne absolute md:left-[45%] left-[30%] sm:left-[37%] lg:left-[45%] uppercase text-white">ITC Talks</p>
 
       <button className="md:hidden text-white" aria-label="Menu" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
         {mobileMenuOpen ? (
