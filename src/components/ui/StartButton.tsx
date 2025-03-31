@@ -31,7 +31,7 @@ export default function StartButton({
 
   return (
     <button
-      className={`animated-gradient-button flex items-center justify-between rounded-full cursor-pointer hover:scale-105 transition-transform duration-300 ${getSizeClasses()} ${className}`}
+      className={`animated-gradient-button flex items-center justify-between rounded-full cursor-pointer hover:scale-101 transition-transform duration-300 ${getSizeClasses()} ${className}`}
       onClick={onClick}
     >
       <span className="font-medium font-Syne text-white">{text}</span>

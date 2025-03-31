@@ -23,7 +23,7 @@ function SectionHero() {
   };
 
   return (
-    <section className="hero-section animate-fade-in-down">
+    <section className="hero-section animate-fade-in-down" id="home">
       <MainText scrollToImage={scrollToImage} />
       <ImageCarousel
         scrollContainerRef={scrollContainerRef}
@@ -144,7 +144,7 @@ const HeroActions = ({
   scrollToImage: (index: number) => void;
 }) => (
   <div className="heroactions-container animate-fade-in-up delay-200">
-    <button className={`hero-button ${btnSize}`}>
+    <button className={`hero-button cursor-pointer ${btnSize}`}>
       <span className="text-stone-900 font-medium">
         Reserve Your Spot Today
       </span>
@@ -174,7 +174,7 @@ const ArrowButton = ({
   scrollToImage: (index: number) => void;
 }) => (
   <button
-    className="arrow-button"
+    className="arrow-button cursor-pointer"
     onClick={() => scrollToImage(direction === "left" ? -1 : 1)}
   >
     <Icon className="w-5 h-5 md:w-8 md:h-5 sm:w-6 sm:h-6 text-stone-900" />
@@ -199,7 +199,7 @@ const images = [
   },
 ];
 
-export function ComingSoon() {
+export function SectionComingSoon() {
   return (
     <div className="coming-soon-c animate-fade-in-down">
       <Image

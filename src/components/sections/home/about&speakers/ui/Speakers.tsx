@@ -29,6 +29,7 @@ export default function Speakers(): ReactElement {
   return (
     <div
       className="bg-[#0147FF] rounded-2xl p-8  flex items-stretch  self-stretch justify-between flex-col md:p-12 text-white"
+      id="speakers"
     >
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-[40px] font-syne font-bold uppercase ">SPEAKERS</h2>
@@ -67,7 +68,7 @@ export default function Speakers(): ReactElement {
           ))}
         </div>
 
-        <button className=" hover:bg-white/10 border text-lg  transition-colors rounded-full px-8 md:py-3 py-5 flex items-center gap-2 text-[#ffffff]">
+        <button className=" hover:bg-white/10 border text-lg cursor-pointer transition-colors rounded-full px-8 md:py-3 py-5 flex items-center gap-2 text-[#ffffff]">
           <span className="font-medium md:text-lg">Learn More</span>
           <Image
             src="images/arrow-empty.svg"

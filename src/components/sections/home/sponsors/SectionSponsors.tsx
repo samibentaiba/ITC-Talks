@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import type { ReactElement } from "react"
-
+import Link from "next/link"
 export default function SectionSponsors(): ReactElement {
   const sponsors = [
     { brand: "Amazon", src: "/images/companylogo.svg" },
@@ -21,15 +21,16 @@ export default function SectionSponsors(): ReactElement {
         <div className="flex desktop-marquee mobile-marquee ">
           {allSponsors.map(
             (sponsor: { brand: string; src: string }, index: number): ReactElement => (
-              <div key={`${sponsor.brand}-${index}`} className="flex justify-center mx-[5%] min-w-[20%] md:min-w-[10%]">
+              <Link href={`https://www.${sponsor.brand}.com`} key={`${sponsor.brand}-${index}`} className="flex justify-center mx-[5%] min-w-[20%] md:min-w-[10%]">
+
                 <Image
                   src={sponsor.src || "/placeholder.svg"}
                   alt={sponsor.brand}
                   width={100}
                   height={100}
-                  className="brightness-0 invert" // Makes logos white
+                  className="brightness-0 invert cursor-pointer" // Makes logos white
                 />
-              </div>
+              </Link>
             ),
           )}
         </div>

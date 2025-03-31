@@ -1,8 +1,7 @@
 "use client";
 import type { ReactElement } from "react";
-import Image from "next/image";
 import { useEffect, useState } from "react";
-import StartButton from "./ui/StartButton";
+import StartButton from "../../../ui/StartButton";
 
 export default function SectionAgenda(): ReactElement {
   const [isMobile, setIsMobile] = useState(false);
@@ -39,7 +38,8 @@ export default function SectionAgenda(): ReactElement {
 
 function DesktopAgenda(): ReactElement {
   return (
-    <section className="mx-auto flex-col w-full px-10 max-w-[1880px] flex items-center justify-between py-4">
+    <section className="mx-auto flex-col w-full px-10 max-w-[1880px] flex items-center justify-between py-4"
+    id="agenda">
       <div className="flex flex-row justify-between mb-8 w-full">
         <h2 className="text-9xl font-bold mb-6">AGENDA</h2>
         <p className="text-sm max-w-[15%] mb-0">
@@ -56,7 +56,7 @@ function DesktopAgenda(): ReactElement {
 
 function TabletAgenda(): ReactElement {
   return (
-    <section className="mx-auto flex-col w-full p-[24px] max-w-[1880px] flex items-center justify-between">
+    <section className="mx-auto flex-col w-full p-[24px] max-w-[1880px] flex items-center justify-between" id="agenda">
       <div className="flex flex-col mb-4 w-full">
         <h2 className="text-8xl font-bold mb-2">AGENDA</h2>
         <p className="text-2xl max-w-full mb-4">
@@ -73,7 +73,7 @@ function TabletAgenda(): ReactElement {
 
 function MobileAgenda(): ReactElement {
   return (
-    <section className="mx-auto flex-col w-full px-[16px] max-w-[1880px] flex items-center justify-between">
+    <section className="mx-auto flex-col w-full px-[16px] max-w-[1880px] flex items-center justify-between" id="agenda">
       <div className="flex flex-col mb-4 w-full">
         <h2 className="text-3xl font-bold mb-2">AGENDA</h2>
         <p className="text-xs max-w-full mb-4">

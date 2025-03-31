@@ -3,7 +3,9 @@ import type { ReactElement } from "react";
 
 export default function AboutUs(): ReactElement {
   return (
-    <div className="bg-[#e6e6e6] w-full rounded-2xl p-8 md:p-12 shadow-sm">
+    <div className="bg-[#e6e6e6] w-full rounded-2xl p-8 md:p-12 shadow-sm"
+    id="about"
+    >
       <div className="flex flex-col md:flex-row justify-between w-full items-between">
         <div className=" flex  gap-[40px] w-full self-stretch justify-between flex-col">
           <div className="flex justify-between items-stretch w-full">

@@ -2,6 +2,7 @@
 
 import type { ReactElement } from "react";
 import Image from "next/image";
+import StartButton from "@/components/ui/StartButton";
 
 type CountdownTimerProps = {
   layout: "desktop" | "tablet" | "mobile";
@@ -92,24 +93,7 @@ export default function CountdownTimer({
             </div>
           </div>
         </div>
-        <button
-          className="flex items-center gap-2 sm:gap-4 justify-between px-4 sm:px-6 md:px-8 py-3 md:py-4 rounded-full"
-          style={{
-            borderRadius: "100px",
-            background:
-              "linear-gradient(85deg, rgba(195, 65, 36, 0.7) 1.59%, rgba(1, 71, 255, 0.5) 121.45%)",
-          }}
-        >
-          <span className="text-base sm:text-lg md:text-xl font-medium font-Syne">
-            Register Now
-          </span>
-          <Image
-            src="/images/arrow-empty.svg"
-            alt="arrow empty"
-            width={15}
-            height={15}
-          />
-        </button>
+        <StartButton text="Register now" deviceType={layout} />
       </div>
     </div>
   );
