@@ -74,7 +74,7 @@ export default function CountdownTimer({
                 ? "text-[200px] leading-[200px]"
                 : layout === "tablet"
                 ? "text-[140px] "
-                : "text-[100px] "
+                : "text-[80px] "
             }`}
           >
             00:00:00
