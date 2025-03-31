@@ -8,19 +8,33 @@ interface StartButtonProps {
   text: string
   onClick?: () => void
   className?: string
+  deviceType?: "mobile" | "tablet" | "desktop"
 }
 
 export default function StartButton({
   text = "Register Now",
   onClick,
   className = "",
+  deviceType = "desktop",
 }: StartButtonProps): ReactElement {
+  const getSizeClasses = () => {
+    switch (deviceType) {
+      case "mobile":
+        return "text-base px-4 py-2 gap-2";
+      case "tablet":
+        return "text-lg px-6 py-3 gap-4";
+      case "desktop":
+      default:
+        return "text-xl px-8 py-4 gap-6";
+    }
+  };
+
   return (
     <button
-      className={`animated-gradient-button flex items-center gap-2 justify-between px-7 py-3 rounded-full cursor-pointer hover:scale-105 transition-transform duration-300 ${className}`}
+      className={`animated-gradient-button flex items-center justify-between rounded-full cursor-pointer hover:scale-105 transition-transform duration-300 ${getSizeClasses()} ${className}`}
       onClick={onClick}
     >
-      <span className="text-lg font-medium font-Syne text-white">{text}</span>
+      <span className="font-medium font-Syne text-white">{text}</span>
       <Image src="/images/arrow-empty.svg" alt="arrow empty" width={15} height={15} />
     </button>
   )

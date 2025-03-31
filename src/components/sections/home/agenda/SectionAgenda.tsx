@@ -48,7 +48,7 @@ function DesktopAgenda(): ReactElement {
       </div>
       <div className="self-stretch p-14 bg-[#1C1A1A] w-full rounded-[3rem] inline-flex flex-col justify-start items-center gap-20">
         <Schedule />
-        <StartButton text="Register now"/>
+        <StartButton text="Register now" deviceType="desktop"/>
       </div>
     </section>
   );
@@ -65,22 +65,7 @@ function TabletAgenda(): ReactElement {
       </div>
       <div className="self-stretch p-4 bg-[#1C1A1A] w-full rounded-[24px] inline-flex flex-col justify-start items-center gap-10">
         <TabletSchedule />
-        <button
-          className="flex items-center gap-2 justify-between px-4 py-3 rounded-full"
-          style={{
-            borderRadius: "100px",
-            background:
-              "linear-gradient(85deg, rgba(195, 65, 36, 0.7) 1.59%, rgba(1, 71, 255, 0.5) 121.45%)",
-          }}
-        >
-          <span className="text-base font-medium font-Syne">Register Now</span>
-          <Image
-            src="images/arrow-empty.svg"
-            alt="arrow empty"
-            width={15}
-            height={15}
-          />
-        </button>
+        <StartButton text="Register now" deviceType="tablet"/>
       </div>
     </section>
   );
@@ -97,22 +82,7 @@ function MobileAgenda(): ReactElement {
       </div>
       <div className="self-stretch p-4 bg-[#1C1A1A] w-full rounded-[24px] inline-flex flex-col justify-start items-center gap-10">
         <MobileSchedule />
-        <button
-          className="flex items-center gap-2 justify-between px-4 py-3 rounded-full"
-          style={{
-            borderRadius: "100px",
-            background:
-              "linear-gradient(85deg, rgba(195, 65, 36, 0.7) 1.59%, rgba(1, 71, 255, 0.5) 121.45%)",
-          }}
-        >
-          <span className="text-base font-medium font-Syne">Register Now</span>
-          <Image
-            src="images/arrow-empty.svg"
-            alt="arrow empty"
-            width={15}
-            height={15}
-          />
-        </button>
+        <StartButton text="Register now" deviceType="mobile"/>
       </div>
     </section>
   );
