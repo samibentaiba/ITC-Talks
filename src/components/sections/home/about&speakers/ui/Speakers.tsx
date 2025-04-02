@@ -68,7 +68,7 @@ export default function Speakers(): ReactElement {
           ))}
         </div>
 
-        <button className=" hover:bg-white/10 border text-lg cursor-pointer transition-colors rounded-full px-8 md:py-3 py-5 flex items-center gap-2 text-[#ffffff]">
+        <button className=" hover:bg-white/10 active:bg-white/10 select-none border text-lg cursor-pointer transition-colors rounded-full px-8 md:py-3 py-5 flex items-center gap-2 text-[#ffffff]">
           <span className="font-medium md:text-lg">Learn More</span>
           <Image
             src="images/arrow-empty.svg"

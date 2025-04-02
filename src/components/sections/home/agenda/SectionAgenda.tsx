@@ -8,6 +8,7 @@ export default function SectionAgenda() {
 
   const layout = styles[screenSize];
 
+
   return (
     <section className={layout.section} id="agenda">
       <div className={layout.header}>
@@ -23,6 +24,7 @@ export default function SectionAgenda() {
     </section>
   )
 }
+
 
 import { Schedule } from "./ui/Schedule";
 import { styles } from "./data/style";

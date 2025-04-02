@@ -34,7 +34,7 @@ export default function StartButton({
       className={`animated-gradient-button flex items-center justify-between rounded-full cursor-pointer hover:scale-101 transition-transform duration-300 ${getSizeClasses()} ${className}`}
       onClick={onClick}
     >
-      <span className="font-medium font-Syne text-white">{text}</span>
+      <span className="font-medium select-none font-Syne text-white">{text}</span>
       <Image src="/images/arrow-empty.svg" alt="arrow empty" width={15} height={15} />
     </button>
   )

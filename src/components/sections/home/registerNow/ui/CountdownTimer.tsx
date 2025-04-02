@@ -39,6 +39,7 @@ export default function CountdownTimer({ layout }: CountdownTimerProps): ReactEl
             Registrations ends in:
           </div>
 
+
           <Timer />
 
           <TimerLabel />

@@ -29,6 +29,7 @@ export default function SectionHero() {
   );
 }
 
+
 /* ui */
 import MainText from "./ui/MainText";
 import ImageCarousel from "./ui/ImageCarousel";

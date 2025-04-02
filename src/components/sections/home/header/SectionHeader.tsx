@@ -19,17 +19,19 @@ export default function SectionHeader() {
   return (
     <header className="mx-auto w-screen px-[1rem] sm:px-[1.5rem] md:px-[2rem] lg:px-[2.5rem] max-w-[1880px] flex items-center justify-between relative py-4">
       {/* Desktop Nav */}
+
       <nav className="hidden md:flex gap-[1rem] sm:gap-[1.5rem] md:gap-[2rem] lg:gap-[2.5rem]">
         <NavItems handleScroll={handleScroll} styles="text-white cursor-pointer hover:text-gray-300"/>
       </nav>
 
-      <p className="text-4xl font-bold font-syne absolute md:left-[45%] left-[30%] sm:left-[37%] lg:left-[45%] uppercase text-white">
+      <p className="text-4xl font-bold select-none font-syne md:absolute lg:absolute md:left-[45%] left-[20%] sm:left-[25%] lg:left-[45%] uppercase text-white">
         ITC Talks
       </p>
-
       {/* Mobile Menu Toggle */}
+
       <button className="md:hidden text-white" aria-label="Menu" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
         {mobileMenuOpen ? <X size={24} /> : <MenuIcon />}
+
       </button>
 
       {/* Contact Link (Desktop) */}
@@ -39,6 +41,7 @@ export default function SectionHeader() {
       </Link>
 
       {/* Mobile Menu */}
+
       <MobileMenu mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} handleScroll={handleScroll} />
     </header>
   );
