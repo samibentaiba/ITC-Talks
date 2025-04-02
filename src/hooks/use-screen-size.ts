@@ -18,15 +18,11 @@ export function useScreenSize(): ScreenSize {
   useEffect(() => {
     // Function to determine screen size based on window width
     const handleResize = () => {
-      const width = window.innerWidth;
-
-      if (width >= BREAKPOINTS.DESKTOP) {
-        setScreenSize("desktop");
-      } else if (width >= BREAKPOINTS.TABLET) {
-        setScreenSize("tablet");
-      } else {
-        setScreenSize("mobile");
-      }
+      window.innerWidth >= BREAKPOINTS.DESKTOP ? 
+      setScreenSize("desktop") : 
+      ( window.innerWidth >= BREAKPOINTS.TABLET ? 
+        setScreenSize("tablet") : 
+        setScreenSize("mobile"));
     };
 
     // Set initial size
