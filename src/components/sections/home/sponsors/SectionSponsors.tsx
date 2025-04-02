@@ -12,7 +12,6 @@ export default function SectionSponsors(): ReactElement {
     { brand: "Gumroad", src: "/images/companylogo4.svg" },
   ]
 
-  // Duplicate sponsors for seamless infinite scroll
   const allSponsors = [...sponsors, ...sponsors]
 
   return (
@@ -28,7 +27,7 @@ export default function SectionSponsors(): ReactElement {
                   alt={sponsor.brand}
                   width={100}
                   height={100}
-                  className="brightness-0 invert cursor-pointer" // Makes logos white
+                  className="brightness-0 invert cursor-pointer"
                 />
               </Link>
             ),

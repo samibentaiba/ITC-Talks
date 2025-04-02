@@ -8,11 +8,7 @@ export const metadata: Metadata = {
 };
 import SectionHeader from "@/components/sections/home/header/SectionHeader";
 import SectionFooter from "@/components/sections/home/footer/SectionFooter";
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body >

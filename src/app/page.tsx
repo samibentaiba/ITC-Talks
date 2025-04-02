@@ -7,7 +7,7 @@ import SectionAgenda from "@/components/sections/home/agenda/SectionAgenda";
 import SectionDetailedSpeakers from "@/components/sections/home/detailedSpeakers/SectionDetailedSpeakers";
 import SectionWhyAttend from "@/components/sections/home/whyAttend/SectionWhyAttend";
 import SectionRegisterNow from "@/components/sections/home/registerNow/SectionRegisterNow";
-import { SectionComingSoon } from "@/components/sections/home/hero/SectionHero";
+import SectionComingSoon from "@/components/sections/home/hero/SectionComingSoon";
 export default function Home() {
   return (
     <main className="bg-black min-h-screen overflow-hidden text-white">
